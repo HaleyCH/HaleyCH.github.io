@@ -1,1 +1,1 @@
-git add .
+hexo d

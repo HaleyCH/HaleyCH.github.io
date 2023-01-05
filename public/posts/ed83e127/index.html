@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="http://static.hluvmiku.tech/js/gtag.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X833KJY0TH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-X833KJY0TH');
+  </script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  
+  <title>CSS暗色主题适配、移动端主题适配 - HaleyCH&#39;s Blog</title>
+  <!-- 
+    <link rel="shortcut icon" href="/favicon.png">
+   -->
+  <link rel="apple-touch-icon" sizes="180x180" href="http://static.hluvmiku.tech/favicon/bocchi/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="http://static.hluvmiku.tech/favicon/bocchi/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="http://static.hluvmiku.tech/favicon/bocchi/favicon-16x16.png">
+  <link rel="manifest" href="http://static.hluvmiku.tech/favicon/bocchi/site.webmanifest">
+  <link rel="mask-icon" href="http://static.hluvmiku.tech/favicon/bocchi/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="http://static.hluvmiku.tech/favicon/bocchi/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="http://static.hluvmiku.tech/favicon/bocchi/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">H&#39;s Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">Categories</a>
+            
+            
+            
+            <a class="nav-item" href="/tags">Tags</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/HaleyCH" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/前端/">前端</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>January</span>
+            <span>4,</span>
+            <span>2023</span>
+        </div>
+        
+
+        <h2 class="title">CSS暗色主题适配、移动端主题适配</h2>
+        <h6 class="date">
+          <span id="busuanzi_container_page_pv">
+             本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+          </span>
+        </h6>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <p>省流：<code>@media (prefers-color-scheme: dark)</code>、<code>@media screen and (min-width：)</code>或 <code>@media screen and(orientation: portrait)</code>。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在学习Vue3时，参考了下里面默认的 <code>main.css</code> 感觉很不错，故打算拿出来讲讲。</p>
+<h1 id="暗色主题适配"><a href="#暗色主题适配" class="headerlink" title="暗色主题适配"></a>暗色主题适配</h1><p>暗色主题适配主要由 <code>@media (prefers-color-scheme: dark)</code> 实现。</p>
+<h2 id="何为-media"><a href="#何为-media" class="headerlink" title="何为@media?"></a>何为@media?</h2><blockquote>
+<p>@media CSS @ 规则可用于基于一个或多个媒体查询的结果来应用样式表的一部分。使用它，你可以指定一个媒体查询和一个 CSS 块，当且仅当该媒体查询与正在使用其内容的设备匹配时，该 CSS 块才能应用于该文档。</p>
+</blockquote>
+<p><code>@media</code> 是一个CSS <code>@规则</code> 。如果满足 <code>@media</code> 的条件则条件规则组里的规则生效。</p>
+<p><strong>示例：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 当屏幕最小尺寸大于等于900px时触发 */</span></span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">900px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">article</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">1rem</span> <span class="number">3rem</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media">参考资料</a></p>
+<h2 id="实现暗色主题适配"><a href="#实现暗色主题适配" class="headerlink" title="实现暗色主题适配"></a>实现暗色主题适配</h2><p>思路：先定义一系列配色，再使用 <code>@media (prefers-color-scheme: dark)</code> 选择合适的颜色。</p>
+<ol>
+<li><p>定义颜色(以我的主页为例,省略部分代码)：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* color palette by HaleyCH*/</span></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attr">--hch-c-black</span>: <span class="built_in">hsl</span>(<span class="number">196</span>, <span class="number">100%</span>, <span class="number">4%</span>);  // 定义主题中的黑色</span><br><span class="line">  <span class="attr">--hch-c-white</span>: <span class="built_in">hsl</span>(<span class="number">195</span>, <span class="number">80%</span>, <span class="number">98%</span>);  // 定义主题中的白色</span><br><span class="line"></span><br><span class="line">  <span class="attr">--hch-c-text-light</span>:<span class="built_in">hsl</span>(<span class="number">196</span>, <span class="number">100%</span>, <span class="number">4%</span>);  // 定义亮色调中文字颜色</span><br><span class="line">  <span class="attr">--hch-c-text-dark</span>:<span class="built_in">hsl</span>(<span class="number">195</span>, <span class="number">80%</span>, <span class="number">98%</span>);  // 定义暗色调中文字颜色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义默认颜色（默认亮色主题）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">  <span class="attr">--color-background</span>: <span class="built_in">var</span>(--hch-c-white);  // 亮色主题背景颜色</span><br><span class="line">  <span class="attr">--color-text</span>: <span class="built_in">var</span>(--hch-c-text-light);  // 亮色主题文字颜色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义暗色主题（根据系统主题切换）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme</span>: dark) &#123;</span><br><span class="line">  <span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--color-background</span>: <span class="built_in">var</span>(--hch-c-black);  // 暗色主题背景颜色</span><br><span class="line">    <span class="attr">--color-text</span>: <span class="built_in">var</span>(--hch-c-text-dark);  // 暗色主题文字颜色</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h1><p>一般采用<code>@media screen and (min-width：)</code>或 <code>@media screen and(orientation: portrait)</code>实现。在vue3提供的默认<code>main.css</code>中，采用了第一种。</p>
+<p>由于思路和<a href="#实现暗色主题适配">实现暗色主题适配</a>很像，仅提供原理和思路。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li><code>@media screen and (min-width：$xxx)</code> ： 当屏幕最小宽度大于等于xxx时触发。</li>
+<li><code>@media screen and(orientation: portrait)</code> ： 当 <code>viewport</code> 纵向时触发。</li>
+</ul>
+<p>其中 <code>orientation</code> 的关键字值为以下二者之一：</p>
+<p> <code>portrait</code><br>   viewport 处于纵向，即高度大于等于宽度。</p>
+<p> <code>landscape</code><br>   viewport 处于横向，即宽度大于高度。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p> 先写PC端的css，再在 <code>@media</code> 中写移动端适配。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><code>@media</code> 是css中十分重要的一个 <code>@规则</code> ，需要重点掌握。</p>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            
+            <p class="tags">
+                
+                Tagged with <a href="/tags/css/" class="tag">#css</a><a href="/tags/media/" class="tag">#@media</a>
+                .
+            </p>
+            
+            <p>This post is written by HaleyCH, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+    </div>
+
+    
+        
+        
+    
+</article>
+
+
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-15MXPXQD4J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-15MXPXQD4J');
+</script>
+
+<footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/about" class="item">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH/hexo-theme-cupertino" class="item">Hexo Theme Cupertino</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH" class="item">GitHub</a>
+                
+                <a href="mailto:hluvmiku@gmail.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2023 HaleyCH<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        <span id="busuanzi_container_site_pv">
+           </br>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+        </span>
+        <a href="https://beian.miit.gov.cn/" target="_blank"></br>浙ICP备2022026813号</a>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+</html>
