@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="js/gtag.js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-X833KJY0TH');
+  </script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  
+  <title>Hexo-Admin安装与简易配置 - HaleyCH&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">H&#39;s Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">Categories</a>
+            
+            
+            
+            <a class="nav-item" href="/tags">Tags</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/HaleyCH" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/博客搭建/">博客搭建</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>January</span>
+            <span>1,</span>
+            <span>2023</span>
+        </div>
+        
+
+        <h2 class="title">Hexo-Admin安装与简易配置</h2>
+        <h6 class="date">
+          <span id="busuanzi_container_page_pv">
+             本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+          </span>
+        </h6>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <p><img src="http://i.hluvmiku.tech/f/63b166c035ac386ff0cef913/" alt="img_63b166c035ac386ff0cef913"></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。 <code>npm install hexo-cli -g.</code></p>
+</blockquote>
+<p>将Hexo部署到服务器后，编辑MD文件同步变得比较麻烦。<br>而<code>Hexo-Admin</code>作为一个Hexo的MD在线编辑工具则解决了这一问题。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ol>
+<li><code>cd path/to/hexo</code> 进入hexo目录</li>
+<li><code>npm install --save hexo-admin</code></li>
+<li>启动hexo <code>hexo s</code></li>
+</ol>
+<p>访问 <code>http://localhost:4000/admin/</code> 看到类似下图界面说明成功安装。</p>
+<p><img src="http://i.hluvmiku.tech/f/63b1649f35ac386ff0cef90f/" alt="img_63b1649f35ac386ff0cef90f"></p>
+<h1 id="简易配置"><a href="#简易配置" class="headerlink" title="简易配置"></a>简易配置</h1><p>在完成上述步骤后，任何人都可以直接访问admin后台，需要设置密码。</p>
+<ol>
+<li><p>如图所示点击 <code>Settings-&gt;Setup authentification here</code><br><img src="http://i.hluvmiku.tech/f/63b165450226d7a907507305/" alt="img_63b165450226d7a907507305"></p>
+</li>
+<li><p>填写完用户名、密码、secret后将生成的代码复制到 <code>_config.yml</code> 中保存。<br><img src="http://i.hluvmiku.tech/f/63b165b635ac386ff0cef911/" alt="img_63b165b635ac386ff0cef911"><br>保存后 <code>_config.yml</code> 差不多长这样：<br><img src="http://i.hluvmiku.tech/f/63b16632af4452e2604c5b66/" alt="img_63b16632af4452e2604c5b66"></p>
+</li>
+<li><p>重启Hexo <code>hexo s</code></p>
+</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="!https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></li>
+<li><a href="!https://albenw.github.io/posts/4ffa5bc6/">https://albenw.github.io/posts/4ffa5bc6/</a></li>
+</ul>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            
+            <p class="tags">
+                
+                Tagged with <a href="/tags/hexo/" class="tag">#hexo</a><a href="/tags/hexo-admin/" class="tag">#hexo-admin</a>
+                .
+            </p>
+            
+            <p>This post is written by HaleyCH, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+    </div>
+
+    
+        
+        
+    
+</article>
+
+
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-15MXPXQD4J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-15MXPXQD4J');
+</script>
+
+<footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/about" class="item">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH/hexo-theme-cupertino" class="item">Hexo Theme Cupertino</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH" class="item">GitHub</a>
+                
+                <a href="mailto:hluvmiku@gmail.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2023 HaleyCH<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        <span id="busuanzi_container_site_pv">
+           </br>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+        </span>
+        <a href="https://beian.miit.gov.cn/" target="_blank"></br>浙ICP备2022026813号</a>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+</html>
