@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="http://static.hluvmiku.tech/js/gtag.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X833KJY0TH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-X833KJY0TH');
+  </script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  
+  <title>stable-diffusion-webui 快速部署（AI生成老婆） - HaleyCH&#39;s Blog</title>
+  <!-- 
+    <link rel="shortcut icon" href="/favicon.png">
+   -->
+  <link rel="apple-touch-icon" sizes="180x180" href="http://static.hluvmiku.tech/favicon/bocchi/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="http://static.hluvmiku.tech/favicon/bocchi/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="http://static.hluvmiku.tech/favicon/bocchi/favicon-16x16.png">
+  <link rel="manifest" href="http://static.hluvmiku.tech/favicon/bocchi/site.webmanifest">
+  <link rel="mask-icon" href="http://static.hluvmiku.tech/favicon/bocchi/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="http://static.hluvmiku.tech/favicon/bocchi/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="http://static.hluvmiku.tech/favicon/bocchi/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">H&#39;s Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">Categories</a>
+            
+            
+            
+            <a class="nav-item" href="/tags">Tags</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/HaleyCH" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/Stable-Diffusion/">Stable Diffusion</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>October</span>
+            <span>11,</span>
+            <span>2022</span>
+        </div>
+        
+
+        <h2 class="title">stable-diffusion-webui 快速部署（AI生成老婆）</h2>
+        <h6 class="date">
+          <span id="busuanzi_container_page_pv">
+             本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+          </span>
+        </h6>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h1><ul>
+<li>stable-diffusion-webui GitHub仓库地址：<br><code>https://github.com/AUTOMATIC1111/stable-diffusion-webui</code></li>
+<li>Novel AI 泄露权重part.1 磁链：<code>magnet:?xt=urn:btih:5bde442da86265b670a3e5ea3163afad2c6f8ecc&amp;dn=novelaileak&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&amp;tr=udp%3A%2F%2F9.rarbg.com%3A2810%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce</code></li>
+<li>Novel AI 泄露权重part.2 磁链： <code>magnet:?xt=urn:btih:a20087e7807f28476dd7b0b2e0174981709d89cd&amp;dn=novelaileakpt2&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&amp;tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&amp;tr=https%3A%2F%2Ftracker.nanoha.org%3A443%2Fannounce</code></li>
+<li>NAI中效果最好的权重 Google Drive：<code>https://drive.google.com/drive/folders/1tHya4XllthvxUcPPEZeJ896q9N0frxN0?usp=sharing</code></li>
+<li>傻瓜式Colab部署Notebook：<code>https://colab.research.google.com/drive/1Z2kCA5lUFYUvHJozUhqW9dxIVyOYDnLd?usp=sharing</code></li>
+<li>更多SDmodel：<code>https://rentry.org/sdmodels</code></li>
+</ul>
+<h1 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h1><h2 id="windows环境需求："><a href="#windows环境需求：" class="headerlink" title="windows环境需求："></a>windows环境需求：</h2><ol>
+<li>安装python 3.10.6（但是经过我测试，安装3.9版本也可行，还能规避不少bug）。可选：使用<a target="_blank" rel="noopener" href="https://docs.conda.io/en/latest/">conda</a>安装</li>
+<li>安装<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a></li>
+<li>配置CUDA，安装<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-11.3.0-download-archive">11.3版本</a>，并且配置<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cudnn">cuDNN</a></li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
+<li>在想要下载的路径打开<code>cmd</code>使用<code>git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git</code>将SD-webui克隆至本地。</li>
+<li>下载所需权重，将其重命名为<code>model.ckpt</code>放入<code>models/Stable-diffusion/</code>下</li>
+<li>运行 <code>webui-user.bat</code></li>
+</ol>
+<h2 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h2><ol>
+<li>新建<code>share.bat</code></li>
+<li>在其中输入<code>python launch.py --share --gradio-debug --gradio-auth username:password</code></li>
+<li>双击运行<code>share.bat</code>即可</li>
+</ol>
+<h1 id="Colab部署"><a href="#Colab部署" class="headerlink" title="Colab部署"></a>Colab部署</h1><h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><ol>
+<li>一个Google账号</li>
+<li>可以访问colab的途径</li>
+</ol>
+<h2 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h2><ol>
+<li>将所需权重保存至<code>Google Drive</code>中</li>
+<li>访问<code>https://colab.research.google.com/drive/1Z2kCA5lUFYUvHJozUhqW9dxIVyOYDnLd?usp=sharing</code></li>
+<li>从上到下依次执行代码</li>
+</ol>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            
+            <p class="tags">
+                
+                Tagged with <a href="/tags/教程/" class="tag">#教程</a><a href="/tags/Stable-Diffusion/" class="tag">#Stable Diffusion</a>
+                .
+            </p>
+            
+            <p>This post is written by HaleyCH, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+    </div>
+
+    
+        
+        
+    
+</article>
+
+
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-15MXPXQD4J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-15MXPXQD4J');
+</script>
+
+<footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/about" class="item">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH/hexo-theme-cupertino" class="item">Hexo Theme Cupertino</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH" class="item">GitHub</a>
+                
+                <a href="mailto:hluvmiku@gmail.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2023 HaleyCH<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        <span id="busuanzi_container_site_pv">
+           </br>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+        </span>
+        <a href="https://beian.miit.gov.cn/" target="_blank"></br>浙ICP备2022026813号</a>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+</html>

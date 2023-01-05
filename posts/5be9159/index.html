@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="http://static.hluvmiku.tech/js/gtag.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X833KJY0TH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-X833KJY0TH');
+  </script>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  
+  <title>FastAPI+MongoDB搭建简易本地图床，可将图片同步到各大图床 - HaleyCH&#39;s Blog</title>
+  <!-- 
+    <link rel="shortcut icon" href="/favicon.png">
+   -->
+  <link rel="apple-touch-icon" sizes="180x180" href="http://static.hluvmiku.tech/favicon/bocchi/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="http://static.hluvmiku.tech/favicon/bocchi/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="http://static.hluvmiku.tech/favicon/bocchi/favicon-16x16.png">
+  <link rel="manifest" href="http://static.hluvmiku.tech/favicon/bocchi/site.webmanifest">
+  <link rel="mask-icon" href="http://static.hluvmiku.tech/favicon/bocchi/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="http://static.hluvmiku.tech/favicon/bocchi/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="http://static.hluvmiku.tech/favicon/bocchi/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">H&#39;s Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">Categories</a>
+            
+            
+            
+            <a class="nav-item" href="/tags">Tags</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/HaleyCH" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/博客搭建/">博客搭建</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>January</span>
+            <span>5,</span>
+            <span>2023</span>
+        </div>
+        
+
+        <h2 class="title">FastAPI+MongoDB搭建简易本地图床，可将图片同步到各大图床</h2>
+        <h6 class="date">
+          <span id="busuanzi_container_page_pv">
+             本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+          </span>
+        </h6>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <p><img src="http://i.hluvmiku.tech/f/63b6ae7192b1c6a2b00373c2/" alt="img_63b6ae7192b1c6a2b00373c2"></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>博客，不能没有图片。<br>但把所有图片都丢自己服务器，也很麻烦。<br>全放到像七牛云啊啥的又感觉不安全啥的。</p>
+<p>于是我便花了一个晚上写了个简易的图床<br>让它能在本地存图片，同时以lazy的方式把图片上传到各大图床。<br>用户访问时，优先重定向访问各大图床上的图片。</p>
+<p>原理图：</p>
+<p><img src="http://i.hluvmiku.tech/f/63b6a9d692b1c6a2b00373c0/" alt="img_63b6a9d692b1c6a2b00373c0"></p>
+<p>已经部署到 <a target="_blank" rel="noopener" href="http://i.hluvmiku.tech">i.hluvmiku.tech</a>上了</p>
+<h1 id="API接口"><a href="#API接口" class="headerlink" title="API接口"></a>API接口</h1><p>利用 <code>fastAPI</code> 搭建，需实现以下几个API接口：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>路由</th>
+<th>method</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Get</td>
+<td>上传界面</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Post</td>
+<td>上传图片至mongoDB，返回图片对应链接<code>/f/&lt;pk&gt;</code></td>
+</tr>
+<tr>
+<td><code>/raw/&lt;pk&gt;/</code></td>
+<td>Get</td>
+<td>返回pk对应本地图片</td>
+</tr>
+<tr>
+<td><code>/f/&lt;pk&gt;/</code></td>
+<td>get</td>
+<td>图片链接。重定向，若已经上传至图床，重定向到图床中图片对应链接，否则重定向到<code>/raw/&lt;pk&gt;/</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>浏览器等直接使用的链接为 <code>/f/&lt;pk&gt;/</code>。</p>
+<h1 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h1><p>后端使用 <code>pymongo</code> 实现。<br>过程不赘述。各部分流程如下：</p>
+<ul>
+<li><code>/</code> 获得Post的图片，验证是否安全，若不安全，返回。若安全，转换为base64，计算sha256作为<code>&lt;pk&gt;</code>，储存到数据库。</li>
+<li><code>/f/&lt;pk&gt;/</code> 收到Get请求，检查本地有无各大图床对应链接。若有，返回各大图床中的链接；若无，重定向<code>/raw/&lt;pk&gt;</code>链接，并将图片加入上传队列。</li>
+<li><code>/raw/&lt;pk&gt;/</code> 收到Get请求，返回本地数据库中图片。</li>
+</ul>
+<h1 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h1><p>随便写写。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>随便写写的，但是感觉蛮有意思，等我重构完会开源，现在代码不是很美观。</p>
+
+    </div>
+
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            
+            <p class="tags">
+                
+                Tagged with <a href="/tags/fastAPI/" class="tag">#fastAPI</a><a href="/tags/MongoDB/" class="tag">#MongoDB</a><a href="/tags/python/" class="tag">#python</a><a href="/tags/pymongo/" class="tag">#pymongo</a>
+                .
+            </p>
+            
+            <p>This post is written by HaleyCH, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+    </div>
+
+    
+        
+        
+    
+</article>
+
+
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-15MXPXQD4J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-15MXPXQD4J');
+</script>
+
+<footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/about" class="item">About</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH/hexo-theme-cupertino" class="item">Hexo Theme Cupertino</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/HaleyCH" class="item">GitHub</a>
+                
+                <a href="mailto:hluvmiku@gmail.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2023 HaleyCH<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        <span id="busuanzi_container_site_pv">
+           </br>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+        </span>
+        <a href="https://beian.miit.gov.cn/" target="_blank"></br>浙ICP备2022026813号</a>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+</html>
