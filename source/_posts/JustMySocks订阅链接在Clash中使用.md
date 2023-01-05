@@ -1,4 +1,4 @@
-title: 在Clash中直接使用JustMySocks订阅链接
+title: 在Clash中直接使用各种订阅链接
 author: HaleyCH
 tags:
   - clash

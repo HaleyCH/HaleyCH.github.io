@@ -1,2 +1,14 @@
-User:*
-Disallow:
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+Allow: /friends/
+Allow: /posts/
+Allow: /posts/*
+Disallow: /admin/
+Disallow: /css/
+Disallow: /theme-img/
+Sitemap: https://blog.hluvmiku.tech/sitemap.xml
+Sitemap: https://blog.hluvmiku.tech/baidu_sitemap.xml
