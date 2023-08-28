@@ -1,0 +1,591 @@
+<!doctype html><html itemscope lang=en itemtype=http://schema.org/WebPage><head><meta charset=utf-8><title>Nintendo Switch Simulator</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu153e445f2b0354ff20c7174a8c2b5f00_171489_32x0_resize_lanczos_3.png type=image/x-icon><link rel=icon href=/images/favicon_hu153e445f2b0354ff20c7174a8c2b5f00_171489_32x0_resize_lanczos_3.png type=image/x-icon><link rel=icon type=image/png sizes=16x16 href=/images/favicon_hu153e445f2b0354ff20c7174a8c2b5f00_171489_16x0_resize_lanczos_3.png><link rel=icon type=image/png sizes=32x32 href=/images/favicon_hu153e445f2b0354ff20c7174a8c2b5f00_171489_32x0_resize_lanczos_3.png><link rel=apple-touch-icon sizes=180x180 href=/images/favicon_hu153e445f2b0354ff20c7174a8c2b5f00_171489_180x0_resize_lanczos_3.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><base href=https://hluvmiku.tech/blog/nintendo-switch-simulator/><meta name=generator content="Hugo 0.115.4"><meta name=keywords content="Nintendo Switch,Simulator,教程,ESP-32,STM32,CH32"><meta name=description content="A step-by-step guide on how to set up and use the Nintendo Switch Simulator using ESP-32, STM32, or CH32 development boards."><meta name=author content="HaleyCH"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://cdn.hluvmiku.tech/blog/202308281657027.JPG"><meta property="og:image" content="https://cdn.hluvmiku.tech/blog/202308281657027.JPG"><meta property="og:title" content="Nintendo Switch Simulator"><meta property="og:description" content="A step-by-step guide on how to set up and use the Nintendo Switch Simulator using ESP-32, STM32, or CH32 development boards."><meta property="og:type" content="website"><meta property="og:url" content="https://hluvmiku.tech/blog/nintendo-switch-simulator/"><meta name=twitter:title content="Nintendo Switch Simulator"><meta name=twitter:description content="A step-by-step guide on how to set up and use the Nintendo Switch Simulator using ESP-32, STM32, or CH32 development boards."><script async src="https://www.googletagmanager.com/gtag/js?id=G-JYMQGQ6F6F"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-JYMQGQ6F6F",{anonymize_ip:!1})}</script><script>let indexURL="https://hluvmiku.tech/searchindex.json",includeSectionsInSearch=["blog"],no_results_for="未找到结果",empty_search_results_placeholder="输入内容进行搜索…"</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href="/css/style.min.57f7880e28faff8ade20a5856dff7bd4b9dc45a8c2e076cd4c083bc67e65eda9.css" integrity="sha256-V/eIDij6/4reIKWFbf971LncRajC4HbNTAg7xn5l7ak=" rel=stylesheet></head><body><header class="header sticky top-0 z-30"><script type=text/javascript src="https://platform-api.sharethis.com/js/sharethis.js#property=64eb6d9f7973a500190b5977&product=inline-share-buttons&source=platform" async></script>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/>HaleyCH's Blog</a></div><input id=nav-toggle type=checkbox class=hidden>
+<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg><svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/>主页</a></li><li class=nav-item><a class=nav-link href=/blog/>博客</a></li><li class=nav-item><a class=nav-link href=/categories/>归档</a></li><li class="nav-item nav-dropdown group relative"><span class="nav-link
+inline-flex items-center">关于<svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span><ul class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100"><li class=nav-dropdown-item><a class=nav-dropdown-link href=/authors/>关于我</a></li><li class=nav-dropdown-item><a class=nav-dropdown-link href=/about/>关于本站点</a></li></ul></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white" data-target=search-modal>
+<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5"><input id=theme-switcher data-theme-switcher type=checkbox>
+<label for=theme-switcher><span class=sr-only>theme switcher</span>
+<span><svg class="absolute left-[4px] top-[4px] z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg><svg class="absolute left-[4px] top-[4px] z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=!1,themeSwitch;localStorage.getItem("theme")==="dark"?darkMode=!0:localStorage.getItem("theme")==="light"&&(darkMode=!1),darkMode&&document.documentElement.classList.toggle("dark"),themeSwitch=document.querySelectorAll("[data-theme-switcher]"),document.addEventListener("DOMContentLoaded",()=>{[].forEach.call(themeSwitch,function(e){e.checked=!!darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})})})</script></div></nav></header><div class="search-wrapper search-modal" data-image=true data-description=true data-tags=true data-categories=true tabindex=-1 aria-hidden=true style=--color-primary:#121212><div class=search-wrapper-content><div class=search-input-body><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentcolor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentcolor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg></label>
+<input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder=搜索文章...></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>输入内容进行搜索…</span></div><div class=search-wrapper-footer><span><kbd><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentcolor" style="margin-top:-2px" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg></kbd><kbd><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentcolor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg></kbd>to navigate</span>
+<span><kbd><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentcolor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg></kbd>to select</span>
+<span class=search-result-info></span>
+<span data-target=close-search-modal><kbd>ESC</kbd> to close</span></div></div></div><main><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><div class=mb-10><img loading decoding=async src=https://cdn.hluvmiku.tech/blog/202308281657027.JPG alt="Nintendo Switch Simulator" class="w-full rounded img" height width></div><span id=busuanzi_container_page_pv>本文总阅读量<span id=busuanzi_value_page_pv></span>次</span><h1 class="h2 mb-4">Nintendo Switch Simulator</h1><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/haleych/><i class="fa-regular fa-circle-user mr-2"></i>HaleyCH</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/%e6%b8%b8%e6%88%8f/ class=ms-1>游戏
+,</a>
+<a href=/categories/diy/ class=ms-1>Diy
+,</a>
+<a href=/categories/%e6%95%99%e7%a8%8b/ class=ms-1>教程</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
+August 28, 2023</li></ul><div class="content mb-10"><details class=table-of-content><summary>目录</summary><nav id=TableOfContents><ol><li><a href=#1-前言>1 前言</a></li><li><a href=#2-准备工作>2 准备工作</a><ol><li><a href=#21-下载整合包>2.1 下载整合包</a></li><li><a href=#22-购买对应的开发板>2.2 购买对应的开发板</a><ol><li><a href=#221-esp-32>2.2.1 ESP-32</a></li><li><a href=#222-其他>2.2.2 其他</a></li></ol></li><li><a href=#23-安装驱动>2.3 安装驱动</a></li><li><a href=#24-烧录固件>2.4 烧录固件</a></li><li><a href=#31-下载easycon并使用>3.1 下载EasyCon并使用</a></li><li><a href=#32-easycon语法介绍>3.2 EasyCon语法介绍</a><ol><li><a href=#按键>按键</a></li><li><a href=#摇杆>摇杆</a></li><li><a href=#等待>等待</a></li><li><a href=#注释>注释</a></li><li><a href=#输出>输出</a></li><li><a href=#消息推送>消息推送</a></li><li><a href=#循环>循环</a></li><li><a href=#常量与变量>常量与变量</a></li><li><a href=#赋值>赋值</a></li><li><a href=#含变量的基础语句>含变量的基础语句</a></li><li><a href=#条件分支>条件分支</a></li></ol></li></ol></li><li><a href=#4-部分脚本>4 部分脚本</a></li><li><a href=#5-进阶操作>5 进阶操作</a></li><li><a href=#6-结语>6 结语</a></li></ol></nav></details><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>本教程需要你拥有一张<code>ESP-32</code>、<code>STM32</code>或者<code>CH32</code>开发板。并且本文只基于<code>ESP-32</code>进行讲解。</p></div></div><h2 id=1-前言>1 前言</h2><p>本文只是一个粗浅的教程，详细可以加QQ群<code>946057081</code>讨论。<br>在开始正文前，我想先列举一下我尝试过的方案。</p><ul><li><a href=https://github.com/Brikwerk/nxbt target=_blank><strong>NXBT</strong></a>
+:这是目前最火的项目，但是它要求使用树莓派或者linux系统的PC。<br>树莓派太贵，所以我没采用。<br>之后我又折腾过 <code>WSL</code>、<code>VMWare</code>、<code>VirtualBox</code>，但是都没成功。<br><code>VMWare</code>是我最接近成功的一次，有兴趣各位可以试试。<br>而且此项目年久失修，我估计switch到<code>16.0</code>固件以后就没法用了。</li><li><a href=https://github.com/interimadd/NintendoSwitchControll target=_blank><strong>NintendoSwitchController</strong></a>
+: 纯日语项目，很不友好，需要<code>Arduino Leonardo</code>，贵。</li><li><a href=https://github.com/EasyConNS/EasyCon target=_blank><strong>EasyCon</strong></a>
+：本文主角。支持多种单片机，价格控制在<code>50元人民币</code>以内，可以自制脚本，接上采集卡还能使用图像识别（采集卡要另外买，差不多200来块），功能强大。</li></ul><h2 id=2-准备工作>2 准备工作</h2><h3 id=21-下载整合包>2.1 下载整合包</h3><p>首先，你需要下载整合包。<br>这里我提供了交流群中2022年12月更新的文件：<br><div class=tab data-tab-group=default><ul class=tab-nav data-tab-nav><li class="tab-nav-item active" data-tab=esp-32 tabindex=0>ESP-32</li><li class=tab-nav-item data-tab=stm32 tabindex=-1>STM32</li><li class=tab-nav-item data-tab=ch32 tabindex=-1>CH32</li></ul><div class=tab-content data-tab-content><div class="tab-content-panel active" data-tab-panel=esp-32><a href=https://cdn.hluvmiku.tech/download/ESP32.zip class="btn btn-primary" target=_blank rel=noopener>点击下载ESP32整合包</a></div><div class=tab-content-panel data-tab-panel=stm32><a href=https://cdn.hluvmiku.tech/download/STM32.zip class="btn btn-primary" target=_blank rel=noopener>点击下载STM32整合包</a></div><div class=tab-content-panel data-tab-panel=ch32><a href=https://cdn.hluvmiku.tech/download/CH32.zip class="btn btn-primary" target=_blank rel=noopener>点击下载CH32整合包</a></div></div></div></p><p>你可以根据自己的需求选择下载不同的文件。</p><h3 id=22-购买对应的开发板>2.2 购买对应的开发板</h3><p><strong>建议根据下载的整合包里的PDF文件购买开发板。</strong></p><h4 id=221-esp-32>2.2.1 ESP-32</h4><p>我使用的是<code>ESP-32</code>。<br><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>请注意不要购买<code>ESP32-Cx</code>、 <code>ESP32-Sx</code>型号。<br>并且最好购买带有`cp2102关键字的开发版。</p></div></div></p><p>薄膜键盘可以不用买，但是数据线一定要买，是比较老的那种接口，具体可以问客服。<br>针脚可以联系客服让厂商帮你焊好（不焊也可以用）。</p><details><summary>这里是我的购买截图</summary><p><img src=https://cdn.hluvmiku.tech/blog/202308281615179.jpg alt=202308281615179></p></details><h4 id=222-其他>2.2.2 其他</h4><p>请参考整合包中PDF文件进行购买。</p><h3 id=23-安装驱动>2.3 安装驱动</h3><p>如果整合包中包含驱动，则安装驱动，<br>若无，直接进行下一步。</p><h3 id=24-烧录固件>2.4 烧录固件</h3><p>所有的整合包中都包含<code>EasyCon</code>固件以及烧录文件，你可以直接烧录。</p><p>下面我将以<code>ESP-32</code>为例进行讲解。</p><p>1、 启动烧录程序。点击烧录程序后，选择<code>ESP32</code>，然后点击<code>OK</code>。</p><details><summary>你应该会看到如图所示界面</summary><p><img src=https://cdn.hluvmiku.tech/blog/202308281630772.png alt=202308281630772></p><p><img src=https://cdn.hluvmiku.tech/blog/202308281632607.png alt=202308281632607></p></details><p>2、 点击<code>...</code>，选择整合包中的固件，并选中。在后方的地址输入 <code>0x0</code>。并选择正确的串口。</p><p><img src=https://cdn.hluvmiku.tech/blog/202308281635066.png alt=202308281635066></p><p>3、 点击<code>start</code></p><details><summary>出现如图所示的界面代表烧录成功</summary><p><img src=https://cdn.hluvmiku.tech/blog/202308281638726.png alt=202308281638726></p></details>## 3 使用EasyCon<h3 id=31-下载easycon并使用>3.1 下载EasyCon并使用</h3><p>你可以在<a href=https://github.com/EasyConNS/EasyCon/releases target=_blank>这里</a>
+找到对应文件。<br>下载并解压他们。</p><p>打开后你会看到这样的界面。</p><p><img src=https://cdn.hluvmiku.tech/blog/202308281640429.png alt=202308281640429></p><p>点击<code>自动连接</code>即可与开发版连接。</p><h3 id=32-easycon语法介绍>3.2 EasyCon语法介绍</h3><h4 id=按键>按键</h4><ul><li>语法：<code>键位 [持续时间(ms)|DOWN|UP]</code></li><li>示例：<code>A</code>（按下A键50毫秒）、<code>HOME 1000</code>（按下Home键1秒）、<code>LEFT DOWN</code>（按住左十字键，需要手动用LEFT UP松开）</li><li>全部按键：<code>A</code>、<code>B</code>、<code>X</code>、<code>Y</code>、<code>UP</code>、<code>DOWN</code>、<code>LEFT</code>、<code>RIGHT</code>、<code>MINUS</code>、<code>PLUS</code>、<code>L</code>、<code>R</code>、<code>ZL</code>、<code>ZR</code>、<code>HOME</code>、<code>CAPTURE</code>。</li></ul><h4 id=摇杆>摇杆</h4><ul><li>语法：<ul><li><code>LS|RS 方向|角度 [, 持续时间(ms)]</code></li><li><code>LS|RS RESET</code></li><li><code>LSS|RSS 方向</code> (1.45新增慢推语法，仅支持方向，不支持角度)</li></ul></li></ul><h4 id=等待>等待</h4><ul><li>语法：<code>[WAIT] 等待时间(ms)</code></li><li>示例：<code>WAIT 500</code>、<code>2000</code></li></ul><h4 id=注释>注释</h4><ul><li>语法：<code># 注释内容</code></li><li><strong>注意</strong>：多写注释是个好习惯，尤其是分享脚本给别人的时候。</li></ul><h4 id=输出>输出</h4><ul><li>语法：<code>PRINT 输出内容</code></li><li><strong>注意</strong>：联机模式专用，在控制台显示文字。</li></ul><h4 id=消息推送>消息推送</h4><ul><li>语法：<code>ALERT 输出内容</code></li><li><strong>注意</strong>：联机模式专用，发送推送消息，基于推送加服务。需要先关注&lt;pushplus推送加>小程序生成token并在设置->推送设置页面配置。</li></ul><h4 id=循环>循环</h4><ul><li>语法：<ul><li>FOR [循环次数]<br>&mldr;<br>NEXT</li></ul></li></ul><h4 id=常量与变量>常量与变量</h4><ul><li>常量语法：<code>常量名 = 值</code></li><li>变量基础语法：<code>$索引</code></li><li>变量进阶语法：<code>$变量名</code>、<code>$$变量名</code></li></ul><h4 id=赋值>赋值</h4><ul><li>语法：<code>目标变量 = 值</code> 或 <code>目标变量 = 来源变量</code></li></ul><h4 id=含变量的基础语句>含变量的基础语句</h4><ul><li>输出：<code>PRINT 用&分隔的输出内容</code></li><li>按键：<code>键位 变量名</code></li><li>摇杆：<code>LS|RS 方向|角度 变量名</code></li><li>等待：<code>WAIT 变量名</code></li></ul><h4 id=条件分支>条件分支</h4><ul><li>语法：<ul><li>IF 条件<br>&mldr;<br>ELSE
+&mldr;
+ENDIF</li></ul></li></ul><h2 id=4-部分脚本>4 部分脚本</h2><details><summary>自动刷活动</summary><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>需要不在同行第一只宝可梦放刷活动用宝可梦，并且该宝可梦第一个技能应该为需要使用的技能。<br>使用时，需连接网络，并进入联机太晶对战界面再运行脚本。<br>此外，还需要将捕捉用的精灵球选择为普通球（否则太浪费）并且买999个。</p></div></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span>FOR
+</span></span><span style=display:flex><span>    X <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    WAIT <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    WAIT <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>NEXT
+</span></span></code></pre></div></details><details><summary>自动取孵</summary><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>1.</span><span style=color:#960050;background-color:#1e0010>语速调到最快，关闭取名，关闭学技能，自动记录最好关闭</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>2.</span><span style=color:#960050;background-color:#1e0010>将【园模镇：西】标记为目的地，并打开原地旋转模式</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>3.</span><span style=color:#960050;background-color:#1e0010>同行携带要生蛋的两只宝可梦</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>4.</span><span style=color:#960050;background-color:#1e0010>将盒子打开的界面调成将要放蛋的第一个空箱子</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>5.</span><span style=color:#960050;background-color:#1e0010>放蛋的空箱子的前一个箱子第一列空出来，第二列只放火焰之躯宝可梦【孵蛋用】</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>6.</span><span style=color:#960050;background-color:#1e0010>菜单界面光标默认调到野餐，脚本开始时人物退出盒子，退出菜单，并骑上神兽</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>7.</span><span style=color:#960050;background-color:#1e0010>初始站位需站在园模镇橄榄球场远离可梦中心球筐左侧，面朝宝可梦中心，球筐在右侧</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>8.</span><span style=color:#960050;background-color:#1e0010>默认</span><span style=color:#ae81ff>20</span><span style=color:#960050;background-color:#1e0010>周期的，孵其他宝可梦，孵蛋时间需自行调节，料理位置按自己的配方调整</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>9.</span><span style=color:#960050;background-color:#1e0010>部分延时为防止卡顿，加的时间有点长，可自行修改，如果野餐不成功，请重新开始即可</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>10.</span>by <span style=color:#960050;background-color:#1e0010>倚夏</span><span style=color:#f92672>&amp;</span>law   <span style=color:#960050;background-color:#1e0010>宝可梦取孵一体脚本</span><span style=color:#ae81ff>2.86</span><span style=color:#960050;background-color:#1e0010>【圆模镇】</span>(<span style=color:#960050;background-color:#1e0010>往复式孵蛋</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>【※※※※运行前清修改数值※※※※】</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#======</span><span style=color:#960050;background-color:#1e0010>初始数值调整【必看】</span><span style=color:#f92672>======</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>孵蛋箱数</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>需自行计算箱数，一次料理</span><span style=color:#ae81ff>54</span><span style=color:#f92672>+</span><span style=color:#960050;background-color:#1e0010>颗蛋左右【一次料理，孵蛋两箱，约</span><span style=color:#ae81ff>1.5</span><span style=color:#960050;background-color:#1e0010>小时】</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>孵蛋周期</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>25</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>直接填写孵蛋宝可梦的孵蛋周期，可看下方的周期表</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>料理次数</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>                 <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>一次料理</span><span style=color:#ae81ff>54</span><span style=color:#960050;background-color:#1e0010>颗蛋左右，根据料理次数换算成你要孵蛋的箱数</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>料理位置</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>8</span>                 <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>就是</span><span style=color:#ae81ff>17</span><span style=color:#960050;background-color:#1e0010>号配方【超级花生酱三文治】在第几行</span> 
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>料理左右</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>                 <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>就是</span><span style=color:#ae81ff>17</span><span style=color:#960050;background-color:#1e0010>号配方【超级花生酱三文治】在</span> <span style=color:#ae81ff>0</span><span style=color:#960050;background-color:#1e0010>左</span> <span style=color:#960050;background-color:#1e0010>还是</span> <span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>右</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>跳过野餐</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>                 <span style=color:#f92672>#</span><span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>开启，不进行野餐直接孵蛋，初始站位不变，并将光标放到孵蛋的第一箱第一个蛋，同行只有一只孵蛋用宝可梦</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>蛋蛋力</span>LV3 <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>                <span style=color:#f92672>#</span><span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>开启，将制作蛋蛋力</span>LV3<span style=color:#960050;background-color:#1e0010>，需要两个甜味料和一份生菜，一次料理</span><span style=color:#ae81ff>85</span><span style=color:#960050;background-color:#1e0010>颗左右</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>甜味料位置</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>               <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>倒数第几行</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#======</span><span style=color:#960050;background-color:#1e0010>进阶调整数值【可选】</span><span style=color:#f92672>======</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>孵蛋延时</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>60</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>默认</span><span style=color:#ae81ff>60</span><span style=color:#960050;background-color:#1e0010>，如果存在没孵出来的蛋，打开图鉴或者服装，自行加大，每加</span><span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>延迟孵蛋时间</span><span style=color:#ae81ff>2</span><span style=color:#960050;background-color:#1e0010>秒</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>拿取延时</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>               <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>默认</span><span style=color:#ae81ff>100</span><span style=color:#960050;background-color:#1e0010>，改小增大吞键可能性</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>按键延迟</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>500</span>               <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>默认</span><span style=color:#ae81ff>500</span><span style=color:#960050;background-color:#1e0010>，按键间隔的延迟</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>复位功能</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>                 <span style=color:#f92672>#</span><span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>开启</span>  <span style=color:#ae81ff>0</span><span style=color:#960050;background-color:#1e0010>关闭</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>复位周期</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>                 <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>几箱复位一次</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>往对侧</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3500</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>往球场对侧方向行走时间</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>往中心</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1500</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>往球场中心方向行走时间</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>闪光识别</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>                 <span style=color:#f92672>#</span><span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>开启，需用采集卡，并自制标签，烧录需注释【@闪光】</span>
+</span></span><span style=display:flex><span>_<span style=color:#960050;background-color:#1e0010>自动放生闪光识别</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>           <span style=color:#f92672>#</span><span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>开启，需用采集卡，烧录需删除放生代码</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>自行按照以下周期选择适合的（周期数据查询神奇百科）</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>网站：</span>https:<span style=color:#f92672>//</span>wiki<span style=color:#ae81ff>.52</span>poke.com<span style=color:#f92672>/</span>wiki<span style=color:#f92672>/</span><span style=color:#960050;background-color:#1e0010>宝可梦列表（按孵化周期分类）</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>孵蛋时间有盈余的，会在第一个蛋的界面空转几圈</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>5</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span>  <span style=color:#ae81ff>5</span>    <span style=color:#960050;background-color:#1e0010>例如鲤鱼王</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>10</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>    <span style=color:#960050;background-color:#1e0010>例如一对鼠</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>15</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span><span style=color:#ae81ff>15</span>    <span style=color:#960050;background-color:#1e0010>例如斗笠菇</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>20</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span><span style=color:#ae81ff>20</span>    <span style=color:#960050;background-color:#1e0010>例如小火龙</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>25</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span><span style=color:#ae81ff>25</span>    <span style=color:#960050;background-color:#1e0010>例如冰砌鹅</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>30</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span><span style=color:#ae81ff>30</span>    <span style=color:#960050;background-color:#1e0010>例如沙河马</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>35</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span><span style=color:#ae81ff>35</span>    <span style=color:#960050;background-color:#1e0010>例如伊布</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#ae81ff>40</span><span style=color:#960050;background-color:#1e0010>周期</span><span style=color:#f92672>=</span><span style=color:#ae81ff>40</span>    <span style=color:#960050;background-color:#1e0010>例如烈咬陆鲨</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>函数</span><span style=color:#75715e>--------------------------</span>
+</span></span><span style=display:flex><span>FUNC POINT      <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>朝向目的地</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>600</span>
+</span></span><span style=display:flex><span>    Y <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>2700</span>
+</span></span><span style=display:flex><span>    B <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>    L <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>400</span>
+</span></span><span style=display:flex><span>ENDFUNC
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>函数</span><span style=color:#75715e>--------------------------</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>准备阶段</span>
+</span></span><span style=display:flex><span>FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>    RCLICK
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>NEXT
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>开始运行</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>跳过野餐</span>
+</span></span><span style=display:flex><span>IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>自动野餐</span><span style=color:#75715e>----------------------------------------------------</span>
+</span></span><span style=display:flex><span>    PRINT <span style=color:#960050;background-color:#1e0010>自动野餐开始</span>
+</span></span><span style=display:flex><span>    CALL POINT
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>270</span>,<span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>270</span>
+</span></span><span style=display:flex><span>    B <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    WAIT <span style=color:#ae81ff>1500</span>
+</span></span><span style=display:flex><span>    LS RESET
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>90</span>,<span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    PLUS <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>270</span>,<span style=color:#ae81ff>700</span>
+</span></span><span style=display:flex><span>    CALL POINT
+</span></span><span style=display:flex><span>    PRINT <span style=color:#960050;background-color:#1e0010>走到野餐位置，开始野餐</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>        X <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    WAIT <span style=color:#ae81ff>7000</span>         <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>等待野餐时间</span>   
+</span></span><span style=display:flex><span>    L <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    WAIT <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>走到篮子位置</span>
+</span></span><span style=display:flex><span>    LS UP,<span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>    LS LEFT,<span style=color:#ae81ff>320</span>
+</span></span><span style=display:flex><span>    WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>    LS UP,<span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>    LS RIGHT,<span style=color:#ae81ff>330</span>
+</span></span><span style=display:flex><span>    WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>    LS DOWN,<span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    WAIT <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>做料理</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    FOR _<span style=color:#960050;background-color:#1e0010>料理次数</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>        PRINT <span style=color:#960050;background-color:#1e0010>开始做料理</span>
+</span></span><span style=display:flex><span>        LS DOWN,<span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>        WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        WAIT <span style=color:#ae81ff>5000</span>  <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>等待选配方界面</span>
+</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>蛋蛋力</span>LV3
+</span></span><span style=display:flex><span>        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#ae81ff>17</span><span style=color:#960050;background-color:#1e0010>号料理</span> <span style=color:#960050;background-color:#1e0010>根据料理位置设置次数</span>
+</span></span><span style=display:flex><span>            PRINT <span style=color:#960050;background-color:#1e0010>制作</span><span style=color:#ae81ff>17</span><span style=color:#960050;background-color:#1e0010>号料理</span>
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>料理位置</span>
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>                LS DOWN,<span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>料理左右</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>判定料理配方在左右</span>
+</span></span><span style=display:flex><span>            IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>在左</span>
+</span></span><span style=display:flex><span>                WAIT <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            ELSE
+</span></span><span style=display:flex><span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>在右</span>
+</span></span><span style=display:flex><span>                LS RIGHT,<span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                WAIT <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            ENDIF
+</span></span><span style=display:flex><span>            WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>                A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            WAIT <span style=color:#ae81ff>8000</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>开始做三文治</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>                LS <span style=color:#ae81ff>90</span>,<span style=color:#ae81ff>550</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                A DOWN
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                LS <span style=color:#ae81ff>270</span>,<span style=color:#ae81ff>525</span>
+</span></span><span style=display:flex><span>                A UP
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>放面包和签子</span>
+</span></span><span style=display:flex><span>            WAIT <span style=color:#ae81ff>3000</span>
+</span></span><span style=display:flex><span>            LS UP,<span style=color:#ae81ff>550</span>
+</span></span><span style=display:flex><span>            WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>120</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>等三文治转圈画面</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>                A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>7</span>                 <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>蛋蛋力</span>LV2<span style=color:#960050;background-color:#1e0010>拿蛋</span><span style=color:#ae81ff>7</span><span style=color:#960050;background-color:#1e0010>轮</span>
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>23</span>
+</span></span><span style=display:flex><span>        ELSE
+</span></span><span style=display:flex><span>            PRINT <span style=color:#960050;background-color:#1e0010>制作蛋蛋力</span>LV3<span style=color:#960050;background-color:#1e0010>料理</span>
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>甜味料位置</span>
+</span></span><span style=display:flex><span>            X <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            A <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            PLUS <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                UP <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            PLUS <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            A <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            WAIT <span style=color:#ae81ff>8000</span>   <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>等待做料理</span>
+</span></span><span style=display:flex><span>            LS UP,<span style=color:#ae81ff>550</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>130</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>等三文治转圈画面</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>                A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>                 <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>蛋蛋力</span>LV3<span style=color:#960050;background-color:#1e0010>拿蛋</span><span style=color:#ae81ff>10</span><span style=color:#960050;background-color:#1e0010>轮</span>
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>16</span>
+</span></span><span style=display:flex><span>        ENDIF
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>8000</span>                   <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>吃料理时间</span>
+</span></span><span style=display:flex><span>        A <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>        PRINT <span style=color:#960050;background-color:#1e0010>吃料理时间</span>
+</span></span><span style=display:flex><span>        PRINT <span style=color:#960050;background-color:#1e0010>吃了</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>次料理</span>
+</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        LS UP,<span style=color:#ae81ff>45</span>
+</span></span><span style=display:flex><span>        WAIT _<span style=color:#960050;background-color:#1e0010>按键延迟</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>拿蛋阶段</span>
+</span></span><span style=display:flex><span>        PRINT <span style=color:#960050;background-color:#1e0010>开始拿蛋</span>
+</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>等待过程中每</span><span style=color:#ae81ff>10</span><span style=color:#960050;background-color:#1e0010>秒吹一次口哨</span>         
+</span></span><span style=display:flex><span>            FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>                R <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>                WAIT <span style=color:#ae81ff>10000</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>连</span>A<span style=color:#960050;background-color:#1e0010>拿蛋</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>52</span>
+</span></span><span style=display:flex><span>                A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                WAIT <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>连</span>B<span style=color:#960050;background-color:#1e0010>取消对话框</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>            B <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            WAIT <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>            B <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            WAIT <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>循环一次时间</span><span style=color:#ae81ff>5</span><span style=color:#960050;background-color:#1e0010>分</span>
+</span></span><span style=display:flex><span>            PRINT <span style=color:#960050;background-color:#1e0010>拿蛋</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>轮</span>
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>返回循环做料理</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    PRINT <span style=color:#960050;background-color:#1e0010>野餐拿蛋结束</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>结束野餐</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        Y <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>13</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>150</span>
+</span></span><span style=display:flex><span>        A <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>150</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    PRINT <span style=color:#960050;background-color:#1e0010>开始返回球场</span>
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>270</span>,<span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    PLUS <span style=color:#ae81ff>600</span>          <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>返回球场</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>90</span>,<span style=color:#ae81ff>1200</span>        <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>走到栏杆边</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>90</span>
+</span></span><span style=display:flex><span>    B <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>    LS RESET
+</span></span><span style=display:flex><span>    CALL POINT
+</span></span><span style=display:flex><span>    LS <span style=color:#ae81ff>270</span>,<span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>交换工具人</span><span style=color:#75715e>----------------------------------------------------</span>
+</span></span><span style=display:flex><span>    PRINT <span style=color:#960050;background-color:#1e0010>交换工具人</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>500</span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>拿出孵蛋宝可梦</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>        X <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>3000</span>
+</span></span><span style=display:flex><span>    UP <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>    L <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    RIGHT _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    Y <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        LEFT _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        DOWN _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    UP _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    MINUS <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>        UP
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    RIGHT _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    R <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>    PRINT <span style=color:#960050;background-color:#1e0010>交换已完成</span>
+</span></span><span style=display:flex><span>ENDIF
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>自动孵蛋</span><span style=color:#75715e>-----------------------------------------------------</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>                           <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>列数</span> <span style=color:#ae81ff>1</span><span style=color:#960050;background-color:#1e0010>为第一列，不要修改</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>                           <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>已孵蛋箱数</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>孵蛋周期</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>*=</span> <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>/=</span> <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span> <span style=color:#f92672>+=</span> _<span style=color:#960050;background-color:#1e0010>孵蛋延时</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>6</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>PRINT <span style=color:#960050;background-color:#1e0010>开始孵蛋</span>
+</span></span><span style=display:flex><span>FOR _<span style=color:#960050;background-color:#1e0010>孵蛋箱数</span>
+</span></span><span style=display:flex><span>    FOR <span style=color:#ae81ff>6</span>                       <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>盒子取蛋</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>        MINUS <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>            DOWN
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>        DOWN _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            LEFT _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>            A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>13</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            B <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>1500</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>往复式孵蛋</span><span style=color:#75715e>----------------------------</span>
+</span></span><span style=display:flex><span>        LS <span style=color:#ae81ff>90</span>,_<span style=color:#960050;background-color:#1e0010>往对侧</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>                LS <span style=color:#ae81ff>90</span>
+</span></span><span style=display:flex><span>                A
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>                LS <span style=color:#ae81ff>270</span>
+</span></span><span style=display:flex><span>                A
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        LS RESET
+</span></span><span style=display:flex><span>        LS <span style=color:#ae81ff>270</span>,<span style=color:#ae81ff>4500</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>往复式孵蛋</span><span style=color:#75715e>----------------------------        </span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>500</span>                 <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>复位</span>
+</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>复位功能</span>
+</span></span><span style=display:flex><span>        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>6</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>复位周期</span>
+</span></span><span style=display:flex><span>                IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span>                    <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>6</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>                    LS <span style=color:#ae81ff>180</span>,<span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                    <span style=color:#ae81ff>400</span>
+</span></span><span style=display:flex><span>                    L <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                    <span style=color:#ae81ff>600</span>
+</span></span><span style=display:flex><span>                    LS <span style=color:#ae81ff>90</span>,<span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>                    <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>                    LS <span style=color:#ae81ff>270</span>,_<span style=color:#960050;background-color:#1e0010>往中心</span>
+</span></span><span style=display:flex><span>                    <span style=color:#ae81ff>600</span>
+</span></span><span style=display:flex><span>                    CALL POINT
+</span></span><span style=display:flex><span>                ENDIF
+</span></span><span style=display:flex><span>            ENDIF
+</span></span><span style=display:flex><span>        ENDIF
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>500</span>                  <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>宝可梦放回盒子</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>            X <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>            A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>        DOWN _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>        LEFT _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>自动放生代码【烧录需删除】</span><span style=color:#75715e>--------------------------</span>
+</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>自动放生闪光识别</span>
+</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            PRINT <span style=color:#960050;background-color:#1e0010>开始放生</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>                <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@</span>LV
+</span></span><span style=display:flex><span>                IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                    BREAK
+</span></span><span style=display:flex><span>                ENDIF
+</span></span><span style=display:flex><span>                <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@闪光</span>
+</span></span><span style=display:flex><span>                IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                    PRINT <span style=color:#960050;background-color:#1e0010>第</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>箱第</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>列出闪了!!!</span>
+</span></span><span style=display:flex><span>                    DOWN <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                    <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>                    <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                ELSE
+</span></span><span style=display:flex><span>                    FOR
+</span></span><span style=display:flex><span>                        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@打开菜单</span>
+</span></span><span style=display:flex><span>                        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                            BREAK
+</span></span><span style=display:flex><span>                        ELSE
+</span></span><span style=display:flex><span>                            A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                            <span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span>                        ENDIF
+</span></span><span style=display:flex><span>                    NEXT
+</span></span><span style=display:flex><span>                    FOR
+</span></span><span style=display:flex><span>                        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@放生</span>
+</span></span><span style=display:flex><span>                        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                            BREAK
+</span></span><span style=display:flex><span>                        ELSE
+</span></span><span style=display:flex><span>                            UP <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>                        ENDIF
+</span></span><span style=display:flex><span>                    NEXT
+</span></span><span style=display:flex><span>                    FOR
+</span></span><span style=display:flex><span>                        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@放生</span><span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>                        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                            BREAK
+</span></span><span style=display:flex><span>                        ELSE
+</span></span><span style=display:flex><span>                            A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                            <span style=color:#ae81ff>1200</span>
+</span></span><span style=display:flex><span>                        ENDIF
+</span></span><span style=display:flex><span>                    NEXT
+</span></span><span style=display:flex><span>                    FOR
+</span></span><span style=display:flex><span>                        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@放生</span><span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>                        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                            BREAK
+</span></span><span style=display:flex><span>                        ELSE
+</span></span><span style=display:flex><span>                            UP <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                            <span style=color:#ae81ff>400</span>
+</span></span><span style=display:flex><span>                        ENDIF
+</span></span><span style=display:flex><span>                    NEXT
+</span></span><span style=display:flex><span>                    FOR
+</span></span><span style=display:flex><span>                        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@放生</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>                        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                            A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                            <span style=color:#ae81ff>1500</span>
+</span></span><span style=display:flex><span>                        ELSE
+</span></span><span style=display:flex><span>                            BREAK
+</span></span><span style=display:flex><span>                        ENDIF
+</span></span><span style=display:flex><span>                    NEXT
+</span></span><span style=display:flex><span>                ENDIF
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>            IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>4</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>                FOR
+</span></span><span style=display:flex><span>                    <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@回到第二行</span>
+</span></span><span style=display:flex><span>                    IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                        UP <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                        <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>                    ELSE
+</span></span><span style=display:flex><span>                        BREAK
+</span></span><span style=display:flex><span>                    ENDIF
+</span></span><span style=display:flex><span>                NEXT
+</span></span><span style=display:flex><span>            ENDIF
+</span></span><span style=display:flex><span>        ENDIF
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>自动放生代码</span><span style=color:#75715e>--------------------------	</span>
+</span></span><span style=display:flex><span>        MINUS <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>闪光识别代码</span><span style=color:#75715e>-----------------------------------------------------     </span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>8</span>
+</span></span><span style=display:flex><span>            <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> _<span style=color:#960050;background-color:#1e0010>闪光识别</span>
+</span></span><span style=display:flex><span>            IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>烧录模式将下行的代码注释掉，在前面加上【</span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>】即可，无采集卡同理</span>
+</span></span><span style=display:flex><span>                <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>@闪光</span>       <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>烧录需将此行注释，如【</span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>=</span> <span style=color:#960050;background-color:#1e0010>闪光】</span>
+</span></span><span style=display:flex><span>                IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>5</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>95</span>
+</span></span><span style=display:flex><span>                    PRINT <span style=color:#960050;background-color:#1e0010>第</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>箱第</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>列出闪了!!!</span>
+</span></span><span style=display:flex><span>                ENDIF
+</span></span><span style=display:flex><span>            ENDIF
+</span></span><span style=display:flex><span>            DOWN <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>闪光识别代码</span><span style=color:#75715e>-----------------------------------------------------</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>        A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>            UP
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            RIGHT _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>            A <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>            B <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>        FOR <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>            A
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>50</span>
+</span></span><span style=display:flex><span>        NEXT
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>2000</span>
+</span></span><span style=display:flex><span>        IF <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#960050;background-color:#1e0010>!</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>            <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>换下一列</span>
+</span></span><span style=display:flex><span>            FOR <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>                RIGHT _<span style=color:#960050;background-color:#1e0010>拿取延时</span>
+</span></span><span style=display:flex><span>                <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            NEXT
+</span></span><span style=display:flex><span>        ELSE
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>200</span>
+</span></span><span style=display:flex><span>            R <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>        ENDIF
+</span></span><span style=display:flex><span>        PRINT <span style=color:#960050;background-color:#1e0010>第</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>箱第</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;</span> <span style=color:#960050;background-color:#1e0010>列已孵完</span>
+</span></span><span style=display:flex><span>        <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    NEXT
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>6</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>$</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>NEXT
+</span></span><span style=display:flex><span>PRINT <span style=color:#960050;background-color:#1e0010>结束</span>
+</span></span></code></pre></div><h2 id=5-进阶操作>5 进阶操作</h2><p>你可以购买一个采集卡，然后自制标签，这样就可以使用图像识别了。</p><h2 id=6-结语>6 结语</h2></div><div class="row items-start justify-between"><div class="lg:col-5 mb-10 flex items-center lg:mb-0"><h5 class=mr-3>标签 :</h5><ul><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/nintendo-switch/>Nintendo switch</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/simulator/>Simulator</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/esp-32/>Esp 32</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/stm32/>Stm32</a></li><li class=inline-block><a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white" href=/tags/ch32/>Ch32</a></li></ul></div><div class="lg:col-4 flex items-center"><div class=sharethis-inline-share-buttons></div></div></div><div class=mt-20><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hluvmiku-tech.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></article></div><div class="section pb-0"><h2 class="h3 mb-12">相关文章</h2><div class=row><div class=lg:col-4><div class="bg-body dark:bg-darkmode-body"><img loading decoding=async src=https://cdn.hluvmiku.tech/blog/202308281503218.png alt="使用GitHub Actions自动部署你的博客" class="mb-6 w-full rounded img" height width><h4 class=mb-3><a href=/blog/build-your-blog-2/>使用GitHub Actions自动部署你的博客</a></h4><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/haleych/><i class="fa-regular fa-circle-user mr-2"></i>HaleyCH</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/%e6%8a%80%e6%9c%af%e5%88%86%e4%ba%ab/ class=ms-1>技术分享
+,</a>
+<a href=/categories/%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba/ class=ms-1>博客搭建
+,</a>
+<a href=/categories/%e6%95%99%e7%a8%8b/ class=ms-1>教程</a></li></ul><p class=mb-6>目录 1 前言 2 使用Git与GitHub备份全站 2.1 初始化Git 2.2 配置.gitignore 3 使用GitHub Actions自动部署全站 3.</p><a class="btn btn-outline-primary btn-sm" href=/blog/build-your-blog-2/>阅读更多</a></div></div><div class=lg:col-4><div class="bg-body dark:bg-darkmode-body"><img loading decoding=async src=https://cdn.hluvmiku.tech/blog/202308272034636.png alt=Re:你好，世界 class="mb-6 w-full rounded img" height width><h4 class=mb-3><a href=/blog/helloworld/>Re:你好，世界</a></h4><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/haleych/><i class="fa-regular fa-circle-user mr-2"></i>HaleyCH</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/%e7%bd%91%e7%ab%99%e6%90%ad%e5%bb%ba/ class=ms-1>网站搭建
+,</a>
+<a href=/categories/%e6%8a%80%e6%9c%af%e5%88%86%e4%ba%ab/ class=ms-1>技术分享
+,</a>
+<a href=/categories/%e7%94%9f%e6%b4%bb/ class=ms-1>生活</a></li></ul><p class=mb-6>目录 原来的博客发生了什么？ 这是什么？ 封面是什么？ 总之，因祸得福 原来的博客发生了什么？ 长话短说，我不小心把之前博客的数据库删了。
+就单纯是一不小心删除了了数据库文件。
+这是什么？ 这是我用 Hugo 搭建的博客，并使用 Github Actions 自动部署。</p><a class="btn btn-outline-primary btn-sm" href=/blog/helloworld/>阅读更多</a></div></div><div class=lg:col-4><div class="bg-body dark:bg-darkmode-body"><img loading decoding=async src=https://cdn.hluvmiku.tech/blog/202308281329993.png alt="使用hugo+GitHub Pages搭建免费博客" class="mb-6 w-full rounded img" height width><h4 class=mb-3><a href=/blog/build-your-blog-1/>使用hugo+GitHub Pages搭建免费博客</a></h4><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/haleych/><i class="fa-regular fa-circle-user mr-2"></i>HaleyCH</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/%e6%8a%80%e6%9c%af%e5%88%86%e4%ba%ab/ class=ms-1>技术分享
+,</a>
+<a href=/categories/%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba/ class=ms-1>博客搭建
+,</a>
+<a href=/categories/%e6%95%99%e7%a8%8b/ class=ms-1>教程</a></li></ul><p class=mb-6>目录 1 前言 2 安装hugo 3 配置hugo与挑选主题 4 使用GitHub Pages部署免费博客 4.</p><a class="btn btn-outline-primary btn-sm" href=/blog/build-your-blog-1/>阅读更多</a></div></div></div></div></div></section></main><footer class="bg-theme-light dark:bg-darkmode-theme-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/>HaleyCH's Blog</a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/about/>关于本站点</a></li><li class="m-3 inline-block"><a href=/privacy-policy/>隐私政策</a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://github.com/HaleyCH><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=bilibili rel="nofollow noopener" href=https://space.bilibili.com/107766275><i class="fab fa-bilibili"></i></a></li><li><a target=_blank aria-label=mail rel="nofollow noopener" href=mailto:hluvmiku@gmail.com><i class="fa-regular fa-envelope"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-light dark:text-darkmode-light container text-center"><p>Made with ❤️ by Haley.<br>Since 2023</p><span id=busuanzi_container_site_pv>本站总访问量<span id=busuanzi_value_site_pv></span>次</span></div></div></footer><script crossorigin=anonymous integrity="sha256-df6tUhrDHLWOxj6GJeZpjflQXCX9AzMB71gZRKq0evQ=" src=/js/script.min.75fead521ac31cb58ec63e8625e6698df9505c25fd033301ef581944aab47af4.js></script>
+<script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script></body></html>
