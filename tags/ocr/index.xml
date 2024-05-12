@@ -1,1 +1,162 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OCR on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/ocr/</link><description>Recent content in OCR on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 12 Sep 2023 14:51:52 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/ocr/index.xml" rel="self" type="application/rss+xml"/><item><title>Screenshot to Reminders</title><link>https://hluvmiku.tech/blog/screenshot-to-reminders/</link><pubDate>Tue, 12 Sep 2023 14:51:52 +0800</pubDate><guid>https://hluvmiku.tech/blog/screenshot-to-reminders/</guid><description>Tip 通过本文，你将了解</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OCR on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/ocr/</link><description>Recent content in OCR on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 12 Sep 2023 14:51:52 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/ocr/index.xml" rel="self" type="application/rss+xml"/><item><title>Screenshot to Reminders</title><link>https://hluvmiku.tech/blog/screenshot-to-reminders/</link><pubDate>Tue, 12 Sep 2023 14:51:52 +0800</pubDate><guid>https://hluvmiku.tech/blog/screenshot-to-reminders/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121546372.png" alt="Featured image of post Screenshot to Reminders" />
+&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>&lt;p>通过本文，你将了解：&lt;/p>
+&lt;ul>
+&lt;li>iOS快捷指令的基本使用&lt;/li>
+&lt;li>如何利用快捷指令中OCR和ChatGPT for iOS将截图文字转换为提醒事项&lt;/li>
+&lt;/ul>
+&lt;p>你将得到视频所示的解决方案：&lt;/p>
+&lt;details>&lt;summary>点击查看视频&lt;/summary>
+&lt;video controls preload="none" id="lazyVideo">
+&lt;source src="https://cdn.hluvmiku.tech/blog/RPReplay_Final1694500535.MP4" type="video/mp4">
+&lt;/video>
+&lt;script>
+document.addEventListener("DOMContentLoaded", function () {
+var video = document.getElementById("lazyVideo");
+document.querySelector("details").addEventListener("toggle", function () {
+if (video.readyState === 0) {
+video.load();
+}
+});
+});
+&lt;/script>
+&lt;/details>
+&lt;/p>&lt;/div>
+&lt;/div>
+&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>注意，你必须要能正常访问ChatGPT for iOS，否则无法使用本文中的快捷指令。&lt;br>
+完整的快捷指令可以在文末获取。&lt;/p>&lt;/div>
+&lt;/div>
+&lt;h2 id="1-前言">1 前言
+&lt;/h2>&lt;p>本人是一个彻头彻底的懒人，所以我一直在寻找能够提高效率的方法。&lt;br>
+很多时候我会遇到一些突发的事情预约，通常是以通知或者聊天的形式发送给我的。&lt;/p>
+&lt;p>自己手动将其输入到&lt;code>提醒事项&lt;/code>中，不免显得麻烦，一般情况下我就懒得手动去添加。&lt;br>
+而通知形式又五花八门，也不适合写一个死的程序用一些固定的pattern去匹配。&lt;br>
+因此我自然而然的想到了&lt;code>OCR+GPT&lt;/code>的方案。&lt;br>
+而快捷指令正好提供了一套完备的调用方案，于是一切都变得水到渠成了。&lt;/p>
+&lt;h2 id="快捷指令">快捷指令
+&lt;/h2>&lt;p>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121513108.png"
+loading="lazy"
+alt="202309121513108"
+>
+快捷指令是在iOS 12中引入的，它可以让你在不编写代码的情况下，通过拖拽的方式来创建一个自动化的工作流。&lt;br>
+经过多年的发展，快捷指令已然成为 Apple 生态的一大「神器」，配合上第三方应用的支持，它可以替你省下很多不必要的时间，极大地提升工作效率。&lt;/p>
+&lt;p>下图为一个简单的快捷指令工作流：
+&lt;img src="https://cdn.hluvmiku.tech/blog/202309121515850.png"
+loading="lazy"
+alt="202309121515850"
+>&lt;/p>
+&lt;h3 id="什么是快捷指令">什么是快捷指令？
+&lt;/h3>&lt;p>快捷指令是一种允许用户在 iOS 设备上自动执行一系列任务的工具。它的目的是简化和自动化日常任务，从而提高效率。用户可以创建自己的快捷指令，也可以从快捷指令图书馆中选择预先创建的快捷指令。&lt;/p>
+&lt;h3 id="快捷指令可以做什么">快捷指令可以做什么？
+&lt;/h3>&lt;ol>
+&lt;li>日常任务自动化：例如，设置一个“上班模式”，当你到达办公室时，它可以自动打开你的工作应用、设置手机为静音并连接到办公室的 Wi-Fi。&lt;/li>
+&lt;li>与第三方应用集成：许多第三方应用都支持快捷指令，这意味着你可以创建自动化工作流程，涉及多个应用的操作。&lt;/li>
+&lt;li>语音控制：与 Siri 集成，允许用户通过语音命令执行快捷指令。&lt;/li>
+&lt;li>Web 任务自动化：例如，自动下载某个网站的所有图片或将网页内容保存到你的笔记应用中。&lt;/li>
+&lt;li>文本操作：自动格式化文本、翻译文本或提取文本中的特定信息。&lt;/li>
+&lt;li>健康和健身：例如，自动记录你的饮食、锻炼或睡眠数据。&lt;/li>
+&lt;li>家庭自动化：与 HomeKit 集成，允许用户自动控制家中的智能设备。&lt;/li>
+&lt;/ol>
+&lt;h3 id="如何创建快捷指令">如何创建快捷指令？
+&lt;/h3>&lt;ol>
+&lt;li>打开“快捷指令”应用。&lt;/li>
+&lt;li>点击“创建个人快捷指令”。&lt;/li>
+&lt;li>选择你想要的动作并将其拖放到工作流程中。&lt;/li>
+&lt;li>为你的快捷指令命名并保存。&lt;/li>
+&lt;/ol>
+&lt;h3 id="为什么选择快捷指令">为什么选择快捷指令？
+&lt;/h3>&lt;ol>
+&lt;li>它集成在 iOS系统中，可以便捷的调用iOS提供的众多功能，也能被如&lt;code>Siri&lt;/code>、&lt;code>快捷手势&lt;/code>等触发。&lt;/li>
+&lt;li>低代码、编写方便。&lt;/li>
+&lt;li>多端同步，你可以在iPhone、iPad、Mac上同步你的快捷指令。&lt;/li>
+&lt;li>便于分享，你可以将你的快捷指令分享给其他人，也可以从其他人那里获取快捷指令。&lt;/li>
+&lt;/ol>
+&lt;h2 id="chatgpt-for-ios">ChatGPT for iOS
+&lt;/h2>&lt;p>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121523168.png"
+loading="lazy"
+alt="202309121523168"
+>&lt;/p>
+&lt;p>&lt;a class="link" href="https://apps.apple.com/us/app/chatgpt/id6448311069" target="_blank" rel="noopener"
+>这是&lt;/a>ChatGPT for iOS的App Store链接，你可以在这里下载它。&lt;/p>
+&lt;p>它提供了一个快捷指令，你可以通过它&lt;strong>免费&lt;/strong>调用&lt;code>GPT 3.5&lt;/code>，因此你可以用它来实现一些有趣的功能。&lt;br>
+在本文中，我将使用它提供的快捷指令来分析OCR出来的文本，并将其转换为提醒事项。&lt;/p>
+&lt;h2 id="实现方案">实现方案
+&lt;/h2>&lt;p>具体流程已经显而易见了：&lt;code>手动截屏 -&amp;gt; OCR -&amp;gt; GPT -&amp;gt; 提醒事项&lt;/code>。&lt;br>
+那我们该如何实现呢？快捷指令已经提供了全部的接口，我们只需要将它们串联起来即可。&lt;/p>
+&lt;h3 id="截屏ocr">截屏+OCR
+&lt;/h3>&lt;p>我们假设用户是在手动截屏以后立刻调用快捷指令的，因此我们需要在快捷指令中获取最近的一张截屏。
+获取截屏的方式有很多种，这里我使用了最简单的方式：&lt;code>获取最近的照片&lt;/code>。
+获取完截屏以后，我们需要将其传递给OCR，这里我们使用了&lt;code>OCR&lt;/code>快捷指令。
+具体如下：&lt;/p>
+&lt;details>&lt;summary>点击查看解决方案&lt;/summary>
+![202309121529215](https://cdn.hluvmiku.tech/blog/202309121529215.png)
+&lt;/details>
+&lt;h3 id="gpt">GPT
+&lt;/h3>&lt;p>对于GPT，我们需要准备一段固定的文本作为Prompt，并拼接上OCR的输出作为输入。此处我们可以采用快捷指令中的&lt;code>文本&lt;/code>与&lt;code>合并文本&lt;/code>实现。下面是我的实现方案：&lt;/p>
+&lt;details>&lt;summary>点击查看解决方案&lt;/summary>
+&lt;p>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121532303.png"
+loading="lazy"
+alt="202309121532303"
+>&lt;/p>
+&lt;p>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121539594.png"
+loading="lazy"
+alt="202309121539594"
+>&lt;/p>
+&lt;/details>
+&lt;h3 id="提醒事项">提醒事项
+&lt;/h3>&lt;p>最后，我们将其转换为提醒事项即可。&lt;/p>
+&lt;details>&lt;summary>点击查看解决方案&lt;/summary>
+![202309121540354](https://cdn.hluvmiku.tech/blog/202309121540354.png)
+&lt;/details>
+&lt;h2 id="完整快捷指令流程和代码">完整快捷指令流程和代码
+&lt;/h2>&lt;p>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121541190.png"
+loading="lazy"
+alt="202309121541190"
+>
+&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>注意，你必须要能正常访问ChatGPT，否则无法使用下方的快捷指令。&lt;/p>&lt;/div>
+&lt;/div>
+&lt;strong>点击&lt;a class="link" href="https://www.icloud.com/shortcuts/72499957fde442a58756390f115f466d" target="_blank" rel="noopener"
+>这里&lt;/a>获得完整的快捷指令。&lt;/strong>&lt;/p></description></item></channel></rss>

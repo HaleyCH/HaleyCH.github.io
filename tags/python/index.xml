@@ -1,1 +1,222 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/python/</link><description>Recent content in python on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 13 Sep 2023 15:49:15 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Use LLM in Your Console</title><link>https://hluvmiku.tech/blog/use-llm-in-your-console/</link><pubDate>Wed, 13 Sep 2023 15:49:15 +0800</pubDate><guid>https://hluvmiku.tech/blog/use-llm-in-your-console/</guid><description>Tip 本文将介绍Open</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/python/</link><description>Recent content in Python on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 13 Sep 2023 15:49:15 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Use LLM in Your Console</title><link>https://hluvmiku.tech/blog/use-llm-in-your-console/</link><pubDate>Wed, 13 Sep 2023 15:49:15 +0800</pubDate><guid>https://hluvmiku.tech/blog/use-llm-in-your-console/</guid><description>&lt;img src="https://cdn.hluvmiku.tech//image/202309131725183.png" alt="Featured image of post Use LLM in Your Console" />
+&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>本文将介绍&lt;code>Open Interpreter&lt;/code> - 一个可以在终端调用&lt;code>GPT-4&lt;/code>或本地的&lt;code>Code-llama&lt;/code>的python库。&lt;/p>&lt;/div>
+&lt;/div>
+&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>&lt;a class="link" href="https://github.com/KillianLucas/open-interpreter/blob/main/README_ZH.md" target="_blank" rel="noopener"
+>点击此处&lt;/a>查看官方中文文档。
+👇官方宣传视频👇
+&lt;video src="https://user-images.githubusercontent.com/63927363/264166941-37152071-680d-4423-9af3-64836a6f7b60.mp4" controls="controls" width="100%" height="auto" preload="true">&lt;/video>&lt;/p>&lt;/div>
+&lt;/div>
+&lt;h2 id="1-为什么选择-open-interpreter">1. 为什么选择 Open Interpreter？
+&lt;/h2>&lt;p>前段时间，OpenAI 发布了&lt;code>Code Interpreter&lt;/code>，旨在给GPT提供一个有生命周期的notebook与一定的储存、运算资源与一个和用户传输文件的方式。它的问世在极大程度上便利了我的日常代码生活。我曾让它在不知道&lt;code>.pt&lt;/code>模型结构的情况下，让它自行搭建模型以读取预训练好的checkpoint，也让他帮我统计过excel报表。可以说它是一个非常强大的工具。&lt;/p>
+&lt;p>&lt;strong>但，随着使用的深入，问题也逐渐暴露。&lt;/strong>&lt;/p>
+&lt;p>先是我的excel中有部分敏感信息，这使我不得不在本地先进行脱敏处理，再上传给GPT统计报表，极大的影响了效率。&lt;br>
+再是，传输大文件极其依赖网络环境，如果我有一个2.5GB的文件要给&lt;code>Code Interpreter&lt;/code>分析，我不得不等待很久。&lt;br>
+此外，OpenAI对其运行时长、内存、存储等资源都有一定的限制，这使得我无法在&lt;code>Code Interpreter&lt;/code>上进行一些复杂的操作。&lt;br>
+最后，&lt;code>Code Interpreter&lt;/code>依赖于预装好的一系列python库，并且不能联网，这极大的限制了它的使用场景。&lt;/p>
+&lt;p>因此我选择了&lt;code>Open Interpreter&lt;/code>，它可以在本地运行，可以联网，可以使用本地的所有python库，可以使用本地的所有资源，可以使用本地的所有文件，可以使用本地的所有命令行工具。&lt;/p>
+&lt;p>一言以蔽之，你能在终端执行什么操作，&lt;code>Open Interpreter&lt;/code>就能在终端执行什么操作，GPT能完成什么操作，它也能一样完成。并且，它可以调用本地或者Azure上的LLM模型以保证隐私。
+&lt;img src="https://cdn.hluvmiku.tech//image/202309131624221.png"
+loading="lazy"
+alt="202309131624221"
+>&lt;/p>
+&lt;h2 id="2-安装与运行">2. 安装与运行
+&lt;/h2>&lt;p>
+&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>推荐将其装在虚拟环境中，如果你打算长期使用，可以将此虚拟环境作为默认环境。&lt;/p>&lt;/div>
+&lt;/div>
+我在一个常用的conda虚拟环境中进行安装，这个环境是我最常使用的环境。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">conda activate your_env
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip install interpreter
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装完成后，你可以在终端中通过&lt;code>interpreter&lt;/code>命令方便的调用它。
+&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>第一次运行可能需要使用&lt;code>interpreter -y&lt;/code>以提供权限。&lt;/p>&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;h2 id="3-open-interpreter可以做什么">3. Open Interpreter可以做什么？
+&lt;/h2>&lt;p>正如它所说，它能进行文件管理、数据处理、网页抓取、系统操作、编码、自动化等等。&lt;/p>
+&lt;details>&lt;summary>点击查看原文&lt;/summary>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&amp;gt; what can you &lt;span class="k">do&lt;/span>?
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> As an Open Interpreter, I can execute a wide range of tasks by running code on
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> your machine. Here are some examples of what I can &lt;span class="k">do&lt;/span>:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">1&lt;/span> File Management: I can create, read, update, and delete files on your system.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> I can also move files around and organize them into directories.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">2&lt;/span> Data Processing: I can &lt;span class="nb">read&lt;/span> and process data from various sources such as
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> databases, APIs, and files. I can perform operations like filtering, sorting,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> aggregating, and transforming this data.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">3&lt;/span> Web Scraping: I can fetch data from websites by parsing HTML and extracting
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> the information you need.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">4&lt;/span> System Operations: I can execute system commands, install software, and
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> manage system processes.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">5&lt;/span> Coding: I can write and execute code in various languages like Python,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> JavaScript, Shell, AppleScript, and HTML.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">6&lt;/span> Automation: I can automate repetitive tasks on your computer.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Please note that any code I run is executed on your machine with your full and
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">complete&lt;/span> permission. I&lt;span class="err">&amp;#39;&lt;/span>m here to help, so &lt;span class="nb">let&lt;/span> me know what you need!
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/details>
+&lt;p>下面我将放一个我亲身经历的几个例子：&lt;/p>
+&lt;h3 id="将一个目录下所有mobi文件转化为pdf">将一个目录下所有.mobi文件转化为pdf
+&lt;/h3>&lt;p>我举一个简单的例子：&lt;code>我想将一个目录下所有.mobi文件转化为pdf&lt;/code>。&lt;br>
+让我们看看&lt;code>Open Interpreter&lt;/code>的表现。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&amp;gt; 将/Users/haleyc/Downloads/FIRE&lt;span class="se">\ &lt;/span>PUNCH&lt;span class="se">\ &lt;/span>炎拳 中的mobi转化为pdf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Sure, I can &lt;span class="nb">help&lt;/span> with that. We will use a tool called Calibre, which is a
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> powerful and easy to use e-book manager. It can convert from a huge number of
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> formats to a huge number of formats, including from MOBI to PDF.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Here is the plan:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">1&lt;/span> Check &lt;span class="k">if&lt;/span> Calibre is installed on your system.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">2&lt;/span> If not, install Calibre.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="m">3&lt;/span> Use Calibre&lt;span class="s1">&amp;#39;s command-line tools to convert the MOBI file to PDF.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1"> Let&amp;#39;&lt;/span>s start with the first step, checking &lt;span class="k">if&lt;/span> Calibre is installed.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> calibre --version
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Would you like to run this code? &lt;span class="o">(&lt;/span>y/n&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>首先，它会告诉你它的解决方案，然后询问你是否同意。&lt;/p>
+&lt;p>它计划先确定是系统否安装了&lt;code>Calibre&lt;/code>，如果没有，通过&lt;code>homebrew&lt;/code>安装，这之后再进行转码。&lt;/p>
+&lt;p>&lt;img src="https://cdn.hluvmiku.tech//image/202309131647182.png"
+loading="lazy"
+alt="202309131647182"
+>&lt;/p>
+&lt;p>在实际执行过程中，由于网络中断，我只能通过输入&lt;code>继续按照最初计划&lt;/code>让它继续执行。&lt;/p>
+&lt;p>由于&lt;code>Calibre&lt;/code>需要手动配置，我不得不手动配置完毕后再次执行。在配置完后，一切就变得十分顺利。&lt;/p>
+&lt;details>&lt;summary>点击查看效果图&lt;/summary>
+&lt;p>&lt;img src="https://cdn.hluvmiku.tech//image/202309131657746.png"
+loading="lazy"
+alt="202309131657746"
+>
+&lt;img src="https://cdn.hluvmiku.tech//image/202309131706989.png"
+loading="lazy"
+alt="202309131706989"
+>&lt;/p>
+&lt;/details>
+&lt;h2 id="4-进阶用法">4. 进阶用法
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>使用Azure&lt;/strong>：&lt;code>interpreter --use-azure&lt;/code>&lt;/li>
+&lt;li>&lt;strong>使用本地LLM&lt;/strong>：&lt;code>interpreter --local&lt;/code>&lt;/li>
+&lt;li>&lt;strong>使用GPT-3.5-turbo&lt;/strong>：&lt;code>interpreter --fast&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>此外，你也可以在python中以库的形式调用它。在此我不做介绍。&lt;/p></description></item></channel></rss>

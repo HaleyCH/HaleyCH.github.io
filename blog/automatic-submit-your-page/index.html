@@ -1,0 +1,690 @@
+<!doctype html><html lang=zh-cn dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="本文介绍了如何使用GitHub Actions自动推送URL至Google Search Console与百度站长平台。"><meta name=keywords content="GitHub Pages,GitHub Actions,Google Search Console,百度站长平台,SEO,博客搭建"><title>Automatic Submit Your Page</title>
+<link rel=canonical href=https://hluvmiku.tech/blog/automatic-submit-your-page/><link rel=stylesheet href=/scss/style.min.0ca97ff16af986d7f419f28fcd569a6d9baaf4a21a08dbd4ed176a11925761d1.css><meta property='og:title' content="Automatic Submit Your Page"><meta property='og:description' content="本文介绍了如何使用GitHub Actions自动推送URL至Google Search Console与百度站长平台。"><meta property='og:url' content='https://hluvmiku.tech/blog/automatic-submit-your-page/'><meta property='og:site_name' content='HaleyCH 的个人博客'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='GitHub Pages'><meta property='article:tag' content='GitHub Actions'><meta property='article:tag' content='Google Search Console'><meta property='article:tag' content='百度站长平台'><meta property='article:tag' content='SEO'><meta property='article:tag' content='博客搭建'><meta property='article:published_time' content='2023-08-29T16:16:49+08:00'><meta property='article:modified_time' content='2023-08-29T16:16:49+08:00'><meta property='og:image' content='https://cdn.hluvmiku.tech/blog/202308291727641.png'><meta name=twitter:title content="Automatic Submit Your Page"><meta name=twitter:description content="本文介绍了如何使用GitHub Actions自动推送URL至Google Search Console与百度站长平台。"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content='https://cdn.hluvmiku.tech/blog/202308291727641.png'><link rel="shortcut icon" href=/favicon.png><script async src="https://www.googletagmanager.com/gtag/js?id=G-JYMQGQ6F6F"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-JYMQGQ6F6F")}</script></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label=切换菜单>
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/><img src=/img/avatar_hu153e445f2b0354ff20c7174a8c2b5f00_171489_300x0_resize_lanczos_3.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>🥰</span></figure><div class=site-meta><h1 class=site-name><a href=/>HaleyCH 的个人博客</a></h1><span style=font-size:larger;margin-bottom:0>“</span><h2 class=site-description id=quote></h2><span style=font-size:larger;margin-top:0;margin-left:90%>”</span></div></header><ol class=menu-social><li><a href=https://github.com/hluvmiku/ target=_blank title=GitHub rel=me><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>主页</span></a></li><li><a href=/%E5%85%B3%E4%BA%8E/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>关于</span></a></li><li><a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/gossip/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Gossip</span></a></li><li><a href=/postgraduate/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Postgraduate</span></a></li><li><a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>暗色模式</span></li></ol></li></ol></aside><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">目录</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#1-前言>1 前言</a></li><li><a href=#2-github-actions-基本使用>2 GitHub Actions 基本使用</a><ol><li><a href=#21-github-actions-简介>2.1 GitHub Actions 简介</a></li><li><a href=#22-github-actions-示例>2.2 GitHub Actions 示例</a></li></ol></li><li><a href=#3-自动推送url至google-search-console>3 自动推送URL至Google Search Console</a></li><li><a href=#4-自动推送url至百度站长平台>4 自动推送URL至百度站长平台</a></li><li><a href=#5-完整的workflow>5 完整的workflow</a></li><li><a href=#6-结语>6 结语</a></li></ol></nav></div></section></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=/blog/automatic-submit-your-page/><img src=https://cdn.hluvmiku.tech/blog/202308291727641.png loading=lazy alt="Featured image of post Automatic Submit Your Page"></a></div><div class=article-details><header class=article-category><a href=/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/ style=background-color:#2a92rf;color:#fffae6>技术分享
+</a><a href=/categories/%E6%95%99%E7%A8%8B/>教程</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/blog/automatic-submit-your-page/>Automatic Submit Your Page</a></h2><h3 class=article-subtitle>本文介绍了如何使用GitHub Actions自动推送URL至Google Search Console与百度站长平台。</h3></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Aug 29, 2023</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>阅读时长: 8 分钟</time></div></footer></div></header><section class=article-content><div class="notice tip"><div class=notice-head><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M12 0c6.6274.0 12 5.37258 12 12 0 6.6274-5.3726 12-12 12C5.37258 24 0 18.6274.0 12 0 5.37258 5.37258.0 12 0zm0 2.4C6.69807 2.4 2.4 6.69807 2.4 12c0 5.3019 4.29807 9.6 9.6 9.6 5.3019.0 9.6-4.2981 9.6-9.6.0-5.30193-4.2981-9.6-9.6-9.6zm3.9515 5.15147L9.6 13.9029 8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515c-.46863.4686-.46863 1.2284.0 1.697l2.4 2.4C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485l7.2-7.19997C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147c-.468599999999999-.46863-1.2284-.46863-1.697.0z" fill="currentcolor"/></svg><p>Tip</p></div><div class=notice-body><p><p>通过本文，你将了解：</p><ul><li>GitHub Actions的基本使用</li><li>如何使用GitHub Actions自动推送URL至Google Search Console</li><li>如何使用GitHub Actions自动推送URL至百度站长平台</li></ul><p>你将得到以下方案：</p><ul><li>使用GitHub Actions每天定时自动推送URL至Google Search Console与百度站长平台</li></ul></p></div></div><div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>本方案基于<a class=link href=/blog/automatic-submit-your-page/>使用GitHub Actions自动部署你的博客</a>中将站点部署到GitHub Pages的方案，并在它的基础上配置GitHub Actions实现自动推送。<br>如果你没有使用过上述方案，也可以参考本文，只需自行获得站点的<code>sitemap.xml</code>即可。</p></div></div><h2 id=1-前言>1 前言</h2><p>新的博客总是会遇到一个问题：如何让搜索引擎知道我的博客的存在？<br>这就需要我们将站点的<code>sitemap.xml</code>提交给搜索引擎。</p><p>但是有的时候，仅仅提交<code>sitemap.xml</code>是不够的。<br>最有效的方式是将你的站点所有希望被索引的URL推送给搜索引擎。</p><p>不过，这个过程是比较繁琐的。<br>本着“懒人”的原则，我研究了一套使用GitHub Actions来实现自动推送URL到Google和百度的方案。</p><h2 id=2-github-actions-基本使用>2 GitHub Actions 基本使用</h2><details><summary>点击查看GitHub Action介绍，熟悉的人可以跳过</summary><h3 id=21-github-actions-简介>2.1 GitHub Actions 简介</h3><p>GitHub Actions是GitHub提供的一项功能，它可以让你在GitHub上自动化地完成一些操作。</p><p>它的配置文件是<code>.yml</code>文件，放在<code>.github/workflows</code>目录下。<br>它的结构如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>&lt;workflow-name&gt; </span><span class=w> </span><span class=c># workflow的名称</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w> </span><span class=l>&lt;workflow-trigger&gt; </span><span class=w> </span><span class=c># workflow的触发条件</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>permissions</span><span class=p>:</span><span class=w>  </span><span class=c># workflow的权限</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>contents</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>issues</span><span class=p>:</span><span class=w> </span><span class=l>write</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>env</span><span class=p>:</span><span class=w>  </span><span class=c># workflow的环境变量</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>ENV</span><span class=p>:</span><span class=w> </span><span class=l>production</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>  </span><span class=c># workflow的工作</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest </span><span class=w> </span><span class=c># 运行环境</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>steps</span><span class=p>:</span><span class=w>  </span><span class=c># workflow的步骤</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Checkout </span><span class=w> </span><span class=c># 步骤名称</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v2 </span><span class=w> </span><span class=c># 步骤使用的action</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>with</span><span class=p>:</span><span class=w>  </span><span class=c># 步骤的参数</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=nt>ref</span><span class=p>:</span><span class=w> </span><span class=l>master</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=nt>fetch-depth</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c>### 或者 ###</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Checkout </span><span class=w> </span><span class=c># 步骤名称</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>echo &#34;Hello World&#34; </span><span class=w> </span><span class=c># 步骤的命令</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>具体来说：</p><ul><li><code>name</code>: 定义工作流的名称。</li><li><code>on</code>: 定义触发工作流的条件，例如 push、pull request 或定时任务。</li><li><code>permissions</code>: 定义工作流的权限，例如读取内容或写入问题。</li><li><code>env</code>: 定义工作流的环境变量。</li><li><code>jobs</code>: 定义工作流中的任务。<ul><li><code>runs-on</code>: 定义任务运行的环境。</li><li><code>steps</code>: 定义任务的步骤。<ul><li><code>name</code>: 定义步骤的名称。</li><li><code>uses</code>: 定义步骤使用的 action。</li><li><code>with</code>: 定义步骤的参数。</li><li><code>run</code>: 定义步骤的命令。</li></ul></li></ul></li></ul><p>当你的仓库中有<code>.yml</code>文件时，GitHub会自动检测并根据触发条件执行它。</p><h3 id=22-github-actions-示例>2.2 GitHub Actions 示例</h3><details><summary>点击查看示例</summary><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=c># Sample workflow for building and deploying a Hugo site to GitHub Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy Hugo site to Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Runs on pushes targeting the default branch</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>branches</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s2>&#34;main&#34;</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>permissions</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>contents</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>pages</span><span class=p>:</span><span class=w> </span><span class=l>write</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>id-token</span><span class=p>:</span><span class=w> </span><span class=l>write</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Environment variables available to all jobs and steps in this workflow</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>HUGO_ENV</span><span class=p>:</span><span class=w> </span><span class=l>production</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>HUGO_VERSION</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;0.115.4&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>GO_VERSION</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;1.20.5&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>NODE_VERSION</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;18.15.0&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>TINA_CLIENT_ID</span><span class=p>:</span><span class=w> </span><span class=l>${{ vars.TINA_CLIENT_ID }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>TINA_TOKEN</span><span class=p>:</span><span class=w> </span><span class=l>${{ vars.TINA_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Build job</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Set up Node.js</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-node@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>node-version</span><span class=p>:</span><span class=w> </span><span class=l>${{ env.NODE_VERSION }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          curl -LO &#34;https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          tar -xvf hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          sudo mv hugo /usr/local/bin/
+</span></span></span><span class=line><span class=cl><span class=sd>          rm hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          hugo version</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install Go</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          curl -LO &#34;https://dl.google.com/go/go${{ env.GO_VERSION }}.linux-amd64.tar.gz&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          sudo tar -C /usr/local -xzf go${{ env.GO_VERSION }}.linux-amd64.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          echo &#34;export PATH=$PATH:/usr/local/go/bin&#34; &gt;&gt; $GITHUB_ENV
+</span></span></span><span class=line><span class=cl><span class=sd>          rm go${{ env.GO_VERSION }}.linux-amd64.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          go version</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Project</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm run project-setup</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install npm dependencies</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm install</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build Website</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm run build</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Upload artifact</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/upload-pages-artifact@v1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>path</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Echo CNAME</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>echo ${{ secrets.CNAME }} &gt; ./public/CNAME</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy Web</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-gh-pages@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PERSONAL_TOKEN</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.PERSONAL_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>EXTERNAL_REPOSITORY</span><span class=p>:</span><span class=w> </span><span class=l>HaleyCH/HaleyCH.github.io</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PUBLISH_BRANCH</span><span class=p>:</span><span class=w> </span><span class=l>master</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PUBLISH_DIR</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>commit_message</span><span class=p>:</span><span class=w> </span><span class=l>${{ github.event.head_commit.message }}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div></details><p>这个例子是我在<a class=link href=/blog/automatic-submit-your-page/>使用GitHub Actions自动部署你的博客</a>中使用的配置文件。它依次实现了：</p><ol><li>安装 <code>Node.js</code></li><li>安装 <code>Hugo</code></li><li>安装 <code>Go</code></li><li>安装 <code>npm</code> 依赖</li><li>构建站点</li><li>上传构建好的站点到 <code>GitHub Pages</code> 仓库</li><li>部署 <code>GitHub Pages</code> 仓库</li><li>将 <code>CNAME</code> 文件写入 <code>public</code> 目录</li><li>推送 <code>GitHub Pages</code> 仓库</li></ol><p>并且，每当这个仓库的代码被改变时，它都会自动执行。</p><p>可以看到GitHub Action是一个非常强大的工具，它可以帮助我们自动化地完成一些操作。<br>通过它，我们可以实现自动推送URL到Google和百度的功能。<div class="notice note"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 9v5m0 5c-4.97056.0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706.0 9 4.02944 9 9 0 4.9706-4.0294 9-9 9zM10.0498 6V6.1L9.9502 6.1002V6H10.0498z" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><p>Note</p></div><div class=notice-body><p>GitHub Actions有每月配额的限制，如果你的仓库中有多个workflow，那么你可能会遇到配额不足的情况。<br>不过对于个人博客来说，这个配额是足够的。</p></div></div><div class="notice tip"><div class=notice-head><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M12 0c6.6274.0 12 5.37258 12 12 0 6.6274-5.3726 12-12 12C5.37258 24 0 18.6274.0 12 0 5.37258 5.37258.0 12 0zm0 2.4C6.69807 2.4 2.4 6.69807 2.4 12c0 5.3019 4.29807 9.6 9.6 9.6 5.3019.0 9.6-4.2981 9.6-9.6.0-5.30193-4.2981-9.6-9.6-9.6zm3.9515 5.15147L9.6 13.9029 8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515c-.46863.4686-.46863 1.2284.0 1.697l2.4 2.4C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485l7.2-7.19997C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147c-.468599999999999-.46863-1.2284-.46863-1.697.0z" fill="currentcolor"/></svg><p>Tip</p></div><div class=notice-body><p><p>开通<code>GitHub Pro</code>或者通过<code>GitHub Education</code>认证可以获得更多的配额。</p><p><img src=https://cdn.hluvmiku.tech/blog/202308291656074.png loading=lazy alt=202308291656074></p></p></div></div></p></details><h2 id=3-自动推送url至google-search-console>3 自动推送URL至Google Search Console</h2><div class="notice info"><div class=notice-head><svg width="20" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16109.993016C9.97971 1.03952 10.6611 1.42989 11.0721 2.22339l6.726 13.57801C18.4502 17.1739 17.4403 19.0208 15.7832 19.0474H2.23859C.730337 19.0234-.507163 17.3108.231587 15.7864L7.08321 2.20877c.12825-.24375.18675-.31425.29738-.44213.44475-.51562.93112-.791624 1.7805-.773624zM9.05046 2.49189C8.79284 2.50464 8.55696 2.64902 8.42834 2.87327 6.06134 7.36539 3.77946 11.9036 1.56546 16.4734 1.36071 16.9328 1.71209 17.5223 2.22621 17.547 6.74871 17.6201 11.2731 17.6201 15.7956 17.547 16.2925 17.523 16.666 16.953 16.459 16.4783c-2.1724-4.569-4.4119-9.10728-6.73729-13.60016C9.58446 2.63402 9.38309 2.48739 9.05046 2.49189z" fill="currentcolor"/><path d="M9.61323 13.2153H8.35773l-.138-6.16842h1.5375l-.144 6.16842zm-1.4355 1.8862C8.17773 14.8731 8.25161 14.6841 8.39973 14.5338 8.54823 14.3838 8.75036 14.3084 9.00648 14.3084 9.26298 14.3084 9.46511 14.3838 9.61323 14.5338 9.76136 14.6841 9.83561 14.8731 9.83561 15.1015 9.83561 15.3216 9.76323 15.5057 9.61923 15.6539 9.47486 15.802 9.27086 15.8762 9.00648 15.8762 8.74211 15.8762 8.53811 15.802 8.39373 15.6539 8.24973 15.5057 8.17773 15.3216 8.17773 15.1015z" fill="currentcolor"/></svg><p>Info</p></div><div class=notice-body><p>本节的内容需要你已经拥有一个Google Search Console账号，并且已经验证了你的域名所有权。<br>具体流程可以参考<a class=link href=/blog/how-to-enable-google-search-console-api/>如何启用Google Search Console API</a>。<br>本节假设你已经拥有了<code>json</code>格式的网站访问令牌。</p></div></div><p>通过使用<code>python</code>的<code>oauth2client</code>库，我们可以实现自动推送URL至Google Search Console的功能。</p><p>请遵循以下步骤：</p><ol><li>在你的仓库中，创建一个名为<code>push_urls_to_google.py</code>的文件，内容如下：</li></ol><details><summary>点击查看代码</summary><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>oauth2client.service_account</span> <span class=kn>import</span> <span class=n>ServiceAccountCredentials</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>httplib2</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>sys</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># https://developers.google.com/search/apis/indexing-api/v3/prereqs#header_2</span>
+</span></span><span class=line><span class=cl><span class=n>JSON_KEY_FILE</span> <span class=o>=</span> <span class=s2>&#34;api-key.json&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>SCOPES</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;https://www.googleapis.com/auth/indexing&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>main</span><span class=p>(</span><span class=n>urls_file</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=n>credentials</span> <span class=o>=</span> <span class=n>ServiceAccountCredentials</span><span class=o>.</span><span class=n>from_json_keyfile_name</span><span class=p>(</span><span class=n>JSON_KEY_FILE</span><span class=p>,</span> <span class=n>scopes</span><span class=o>=</span><span class=n>SCOPES</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>http</span> <span class=o>=</span> <span class=n>credentials</span><span class=o>.</span><span class=n>authorize</span><span class=p>(</span><span class=n>httplib2</span><span class=o>.</span><span class=n>Http</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>ENDPOINT</span> <span class=o>=</span> <span class=s2>&#34;https://indexing.googleapis.com/v3/urlNotifications:publish&#34;</span>
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=n>urls_file</span><span class=p>,</span> <span class=s2>&#34;r&#34;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>urls</span> <span class=o>=</span> <span class=n>f</span><span class=o>.</span><span class=n>readlines</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=n>u</span> <span class=ow>in</span> <span class=n>urls</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>content</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=cl>        <span class=n>content</span><span class=p>[</span><span class=s1>&#39;url&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>u</span><span class=o>.</span><span class=n>strip</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=n>content</span><span class=p>[</span><span class=s1>&#39;type&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&#34;URL_UPDATED&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=n>json_ctn</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>content</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>response</span><span class=p>,</span> <span class=n>content</span> <span class=o>=</span> <span class=n>http</span><span class=o>.</span><span class=n>request</span><span class=p>(</span><span class=n>ENDPOINT</span><span class=p>,</span> <span class=n>method</span><span class=o>=</span><span class=s2>&#34;POST&#34;</span><span class=p>,</span> <span class=n>body</span><span class=o>=</span><span class=n>json_ctn</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=n>result</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>content</span><span class=o>.</span><span class=n>decode</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=s2>&#34;error&#34;</span> <span class=ow>in</span> <span class=n>result</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Error(</span><span class=si>{}</span><span class=s2> - </span><span class=si>{}</span><span class=s2>): </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>result</span><span class=p>[</span><span class=s2>&#34;error&#34;</span><span class=p>][</span><span class=s2>&#34;code&#34;</span><span class=p>],</span> <span class=n>result</span><span class=p>[</span><span class=s2>&#34;error&#34;</span><span class=p>][</span><span class=s2>&#34;status&#34;</span><span class=p>],</span> <span class=n>result</span><span class=p>[</span><span class=s2>&#34;error&#34;</span><span class=p>][</span><span class=s2>&#34;message&#34;</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;urlNotificationMetadata.url: </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>result</span><span class=p>[</span><span class=s2>&#34;urlNotificationMetadata&#34;</span><span class=p>][</span><span class=s2>&#34;url&#34;</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;urlNotificationMetadata.latestUpdate.url: </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>result</span><span class=p>[</span><span class=s2>&#34;urlNotificationMetadata&#34;</span><span class=p>][</span><span class=s2>&#34;latestUpdate&#34;</span><span class=p>][</span><span class=s2>&#34;url&#34;</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;urlNotificationMetadata.latestUpdate.type: </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>result</span><span class=p>[</span><span class=s2>&#34;urlNotificationMetadata&#34;</span><span class=p>][</span><span class=s2>&#34;latestUpdate&#34;</span><span class=p>][</span><span class=s2>&#34;type&#34;</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;urlNotificationMetadata.latestUpdate.notifyTime: </span><span class=si>{}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>result</span><span class=p>[</span><span class=s2>&#34;urlNotificationMetadata&#34;</span><span class=p>][</span><span class=s2>&#34;latestUpdate&#34;</span><span class=p>][</span><span class=s2>&#34;notifyTime&#34;</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s2>&#34;__main__&#34;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>sys</span><span class=o>.</span><span class=n>argv</span><span class=p>)</span> <span class=o>&lt;</span> <span class=mi>2</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;Usage: python push_urls_to_google.py &lt;urls_file&gt;&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=n>urls_file</span> <span class=o>=</span> <span class=n>sys</span><span class=o>.</span><span class=n>argv</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=n>main</span><span class=p>(</span><span class=n>urls_file</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div></details>并将`json`格式的`Google SearchAPI`凭据命名为`api-key.json`，放在仓库的根目录下。
+当然，安全起见，你也可以将它放在`GitHub Secrets`中，然后在`push_urls_to_google.py`中读取它。但是我的workflow并没有实现这个功能，读者可以自行实现。
+这段代码将读取同目录下`api-key.json`并从输入中读取待推送的URL列表，并将它们推送至Google Search Console。<div class="notice warning"><div class=notice-head><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M10 0c5.522.0 10 4.478 10 10S15.522 20 10 20 0 15.522.0 10 4.478.0 10 0zm0 2C5.589 2 2 5.589 2 10s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm2.293 4.293 1.414 1.414L11.414 10l2.293 2.293-1.414 1.414L10 11.414 7.707 13.707 6.293 12.293 8.586 10 6.293 7.707 7.707 6.293 10 8.586l2.293-2.293z" fill="currentcolor"/></svg><p>Warning</p></div><div class=notice-body><p>请务必将仓库设为<code>private</code>，否则你的<code>Google SearchAPI</code>凭据将会被公开。</p></div></div><ol start=2><li>在你的仓库<code>.github/workflows</code>目录下，创建一个名为<code>push_urls_to_google.yml</code>的文件，设定如下所示的触发条件:</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push Latest URLs Once a Day</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>schedule</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=nt>cron</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;0 0 * * *&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>permissions</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>contents</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>pages</span><span class=p>:</span><span class=w> </span><span class=l>write</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>id-token</span><span class=p>:</span><span class=w> </span><span class=l>write</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>这表示这个Action将在UTC时间的每天0点自动执行。</p><ol start=3><li>获得<code>sitemap.xml</code>的URL。
+如果你是根据<a class=link href=/blog/automatic-submit-your-page/>使用GitHub Actions自动部署你的博客</a>中的方案部署的博客，那么你可以在<code>push_urls_to_google.yml</code>中添加以下代码：
+<detais><summary>点击查看代码</summary></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Build job</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Set up Node.js</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-node@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>node-version</span><span class=p>:</span><span class=w> </span><span class=l>${{ env.NODE_VERSION }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          curl -LO &#34;https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          tar -xvf hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          sudo mv hugo /usr/local/bin/
+</span></span></span><span class=line><span class=cl><span class=sd>          rm hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          hugo version</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install Go</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          curl -LO &#34;https://dl.google.com/go/go${{ env.GO_VERSION }}.linux-amd64.tar.gz&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          sudo tar -C /usr/local -xzf go${{ env.GO_VERSION }}.linux-amd64.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          echo &#34;export PATH=$PATH:/usr/local/go/bin&#34; &gt;&gt; $GITHUB_ENV
+</span></span></span><span class=line><span class=cl><span class=sd>          rm go${{ env.GO_VERSION }}.linux-amd64.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          go version</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Project</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm run project-setup</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install npm dependencies</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm install</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build Website</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm run build</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Upload artifact</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/upload-pages-artifact@v1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>path</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Echo CNAME</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>echo ${{ secrets.CNAME }} &gt; ./public/CNAME</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy Web</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-gh-pages@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PERSONAL_TOKEN</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.PERSONAL_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>EXTERNAL_REPOSITORY</span><span class=p>:</span><span class=w> </span><span class=l>HaleyCH/HaleyCH.github.io</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PUBLISH_BRANCH</span><span class=p>:</span><span class=w> </span><span class=l>master</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PUBLISH_DIR</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>commit_message</span><span class=p>:</span><span class=w> </span><span class=l>${{ github.event.head_commit.message }}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div></details>它将自动部署你的网页，这样你就可以获得`sitemap.xml`了。<p>对于其他方案，你需要自行获得<code>sitemap.xml</code>并将其读入workflow中。</p><ol start=4><li>在<code>push_urls_to_google.yml</code>中添加以下代码：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Extract Latest URLs</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          latest_urls=$(grep -o &#39;&lt;loc&gt;[^&lt;]*&lt;/loc&gt;&#39; ./public/sitemap.xml | sed &#39;s/&lt;loc&gt;\(.*\)&lt;\/loc&gt;/\1/&#39; | head -n 100)
+</span></span></span><span class=line><span class=cl><span class=sd>          echo &#34;$latest_urls&#34; &gt; latest_urls.txt</span><span class=w>          
+</span></span></span></code></pre></td></tr></table></div></div><p>他将读取<code>./public/sitemap.xml</code>中的前100条URL，并将它们写入<code>latest_urls.txt</code>中。</p><ol start=5><li>配置环境并运行脚本：</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>install python</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-python@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>python-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.x&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install dependencies</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          python -m pip install --upgrade pip
+</span></span></span><span class=line><span class=cl><span class=sd>          pip install oauth2client
+</span></span></span><span class=line><span class=cl><span class=sd>          pip install httplib2</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push Latest URLs to Google</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          pwd
+</span></span></span><span class=line><span class=cl><span class=sd>          ls -l
+</span></span></span><span class=line><span class=cl><span class=sd>          python ./push_urls_to_google.py latest_urls.txt</span><span class=w>          
+</span></span></span></code></pre></td></tr></table></div></div><p>这段代码会自动配置python环境与依赖项，并且运行<code>push_urls_to_google.py</code>脚本。</p><h2 id=4-自动推送url至百度站长平台>4 自动推送URL至百度站长平台</h2><p><div class="notice info"><div class=notice-head><svg width="20" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16109.993016C9.97971 1.03952 10.6611 1.42989 11.0721 2.22339l6.726 13.57801C18.4502 17.1739 17.4403 19.0208 15.7832 19.0474H2.23859C.730337 19.0234-.507163 17.3108.231587 15.7864L7.08321 2.20877c.12825-.24375.18675-.31425.29738-.44213.44475-.51562.93112-.791624 1.7805-.773624zM9.05046 2.49189C8.79284 2.50464 8.55696 2.64902 8.42834 2.87327 6.06134 7.36539 3.77946 11.9036 1.56546 16.4734 1.36071 16.9328 1.71209 17.5223 2.22621 17.547 6.74871 17.6201 11.2731 17.6201 15.7956 17.547 16.2925 17.523 16.666 16.953 16.459 16.4783c-2.1724-4.569-4.4119-9.10728-6.73729-13.60016C9.58446 2.63402 9.38309 2.48739 9.05046 2.49189z" fill="currentcolor"/><path d="M9.61323 13.2153H8.35773l-.138-6.16842h1.5375l-.144 6.16842zm-1.4355 1.8862C8.17773 14.8731 8.25161 14.6841 8.39973 14.5338 8.54823 14.3838 8.75036 14.3084 9.00648 14.3084 9.26298 14.3084 9.46511 14.3838 9.61323 14.5338 9.76136 14.6841 9.83561 14.8731 9.83561 15.1015 9.83561 15.3216 9.76323 15.5057 9.61923 15.6539 9.47486 15.802 9.27086 15.8762 9.00648 15.8762 8.74211 15.8762 8.53811 15.802 8.39373 15.6539 8.24973 15.5057 8.17773 15.3216 8.17773 15.1015z" fill="currentcolor"/></svg><p>Info</p></div><div class=notice-body><p>本节的内容需要你已经拥有一个百度站长平台账号，并且已经验证了你的域名所有权。<br>由于这一步较为简单，我不会详细讲解。</p></div></div>在workflow中添加以下代码即可:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push Latest URLs to Baidu</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          while IFS= read -r url; do
+</span></span></span><span class=line><span class=cl><span class=sd>            curl -H &#34;Content-Type:text/plain&#34; --data-binary &#34;$url&#34; &#34;http://data.zz.baidu.com/urls?site=&lt;yourDomain&gt;&amp;token=&lt;yourToken&gt;&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          done &lt; latest_urls.txt</span><span class=w>          
+</span></span></span></code></pre></td></tr></table></div></div><p>它会自动读取<code>latest_urls.txt</code>中的URL，并将它们推送至百度站长平台。</p><h2 id=5-完整的workflow>5 完整的workflow</h2><details><summary>点击查看完整的workflow</summary><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push Latest URLs Once a Day</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>schedule</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=nt>cron</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;0 0 * * *&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>workflow_dispatch</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>permissions</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>contents</span><span class=p>:</span><span class=w> </span><span class=l>read</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>pages</span><span class=p>:</span><span class=w> </span><span class=l>write</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>id-token</span><span class=p>:</span><span class=w> </span><span class=l>write</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Environment variables available to all jobs and steps in this workflow</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>env</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>HUGO_ENV</span><span class=p>:</span><span class=w> </span><span class=l>production</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>HUGO_VERSION</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;0.115.4&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>GO_VERSION</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;1.20.5&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>NODE_VERSION</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;18.15.0&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>TINA_CLIENT_ID</span><span class=p>:</span><span class=w> </span><span class=l>${{ vars.TINA_CLIENT_ID }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>TINA_TOKEN</span><span class=p>:</span><span class=w> </span><span class=l>${{ vars.TINA_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Build job</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Set up Node.js</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-node@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>node-version</span><span class=p>:</span><span class=w> </span><span class=l>${{ env.NODE_VERSION }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          curl -LO &#34;https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          tar -xvf hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          sudo mv hugo /usr/local/bin/
+</span></span></span><span class=line><span class=cl><span class=sd>          rm hugo_extended_${{ env.HUGO_VERSION }}_Linux-64bit.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          hugo version</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install Go</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          curl -LO &#34;https://dl.google.com/go/go${{ env.GO_VERSION }}.linux-amd64.tar.gz&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          sudo tar -C /usr/local -xzf go${{ env.GO_VERSION }}.linux-amd64.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          echo &#34;export PATH=$PATH:/usr/local/go/bin&#34; &gt;&gt; $GITHUB_ENV
+</span></span></span><span class=line><span class=cl><span class=sd>          rm go${{ env.GO_VERSION }}.linux-amd64.tar.gz
+</span></span></span><span class=line><span class=cl><span class=sd>          go version</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Setup Project</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm run project-setup</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install npm dependencies</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm install</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Build Website</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>npm run build</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Upload artifact</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/upload-pages-artifact@v1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>path</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Echo CNAME</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>echo ${{ secrets.CNAME }} &gt; ./public/CNAME</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Deploy Web</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>peaceiris/actions-gh-pages@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PERSONAL_TOKEN</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.PERSONAL_TOKEN }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>EXTERNAL_REPOSITORY</span><span class=p>:</span><span class=w> </span><span class=l>HaleyCH/HaleyCH.github.io</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PUBLISH_BRANCH</span><span class=p>:</span><span class=w> </span><span class=l>master</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>PUBLISH_DIR</span><span class=p>:</span><span class=w> </span><span class=l>./public</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>commit_message</span><span class=p>:</span><span class=w> </span><span class=l>${{ github.event.head_commit.message }}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Extract Latest URLs</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          latest_urls=$(grep -o &#39;&lt;loc&gt;[^&lt;]*&lt;/loc&gt;&#39; ./public/sitemap.xml | sed &#39;s/&lt;loc&gt;\(.*\)&lt;\/loc&gt;/\1/&#39; | head -n 100)
+</span></span></span><span class=line><span class=cl><span class=sd>          echo &#34;$latest_urls&#34; &gt; latest_urls.txt</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push Latest URLs to Baidu</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          while IFS= read -r url; do
+</span></span></span><span class=line><span class=cl><span class=sd>            curl -H &#34;Content-Type:text/plain&#34; --data-binary &#34;$url&#34; &#34;http://data.zz.baidu.com/urls?site=hluvmiku.tech&amp;token=x1rQVPzQUzr3sm35&#34;
+</span></span></span><span class=line><span class=cl><span class=sd>          done &lt; latest_urls.txt</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>install python</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/setup-python@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>python-version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.x&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Install dependencies</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          python -m pip install --upgrade pip
+</span></span></span><span class=line><span class=cl><span class=sd>          pip install oauth2client
+</span></span></span><span class=line><span class=cl><span class=sd>          pip install httplib2</span><span class=w>          
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Push Latest URLs to Google</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          pwd
+</span></span></span><span class=line><span class=cl><span class=sd>          ls -l
+</span></span></span><span class=line><span class=cl><span class=sd>          python ./push_urls_to_google.py latest_urls.txt</span><span class=w>          
+</span></span></span></code></pre></td></tr></table></div></div></details><h2 id=6-结语>6 结语</h2><p>使用GitHub Actions可以将许多琐碎的、重复的工作自动化，让我们可以专注于更有意义的事情。<br>本文我提出了一套自动化推送方案，但是它仍然存在推送不够智能的问题。<br>大家有兴趣可以自行研究。</p></section><footer class=article-footer><section class=article-tags><a href=/tags/github-pages/>GitHub Pages</a>
+<a href=/tags/github-actions/>GitHub Actions</a>
+<a href=/tags/google-search-console/>Google Search Console</a>
+<a href=/tags/%E7%99%BE%E5%BA%A6%E7%AB%99%E9%95%BF%E5%B9%B3%E5%8F%B0/>百度站长平台</a>
+<a href=/tags/seo/>SEO</a>
+<a href=/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/>博客搭建</a></section><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg>
+<span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>相关文章</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/blog/build-your-blog-2/><div class=article-image><img src=https://cdn.hluvmiku.tech/blog/202308281503218.png loading=lazy data-key data-hash=https://cdn.hluvmiku.tech/blog/202308281503218.png></div><div class=article-details><h2 class=article-title>Build Your Blog 2</h2></div></a></article><article class=has-image><a href=/blog/build-your-blog-1/><div class=article-image><img src=https://cdn.hluvmiku.tech/blog/202308281329993.png loading=lazy data-key data-hash=https://cdn.hluvmiku.tech/blog/202308281329993.png></div><div class=article-details><h2 class=article-title>Build Your Blog 1</h2></div></a></article><article class=has-image><a href=/blog/how-to-enable-google-search-console-api/><div class=article-image><img src=https://cdn.hluvmiku.tech/blog/202308301902385.png loading=lazy data-key data-hash=https://cdn.hluvmiku.tech/blog/202308301902385.png></div><div class=article-details><h2 class=article-title>How to Enable Google Search Console API</h2></div></a></article><article class=has-image><a href=/postgraduate/my-resources-and-plans/><div class=article-image><img src=https://cdn.hluvmiku.tech/image202402271744674.png loading=lazy data-key data-hash=https://cdn.hluvmiku.tech/image202402271744674.png></div><div class=article-details><h2 class=article-title>My Resources and Plans</h2></div></a></article><article class=has-image><a href=/blog/create-your-custom-email-domain-with-icloud-plus/><div class=article-image><img src=https://cdn.hluvmiku.tech//image/202310102031515.png loading=lazy data-key data-hash=https://cdn.hluvmiku.tech//image/202310102031515.png></div><div class=article-details><h2 class=article-title>Create Your Custom Email Domain With ICloud Plus</h2></div></a></article></div></div></aside><div class=disqus-container><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style><script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script><footer class=site-footer><section class=copyright>&copy;
+2023 -
+2024 HaleyCH 的个人博客</section><section class=powerby><a href=https://beian.miit.gov.cn>浙ICP备2022026813号-2</a><br>使用 <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> 构建<br>主题 <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.26.0>Stack</a></b> 由 <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a> 设计, 由 HaleyCH 修改</section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/ts/main.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><script>quotes=["<div style='color:gray'>发挥才智，则锋芒毕露；凭借感情，则流于世俗；坚持己见，则多方掣肘。<span style='color:green;font-weight: bold'>总之，人世难居。</span></div>","<div style='color:gray'>「世界の中心でアイを叫んだけもの」</div>","<div style='color:gray'>爱上<span style='color:darkred;font-weight: bold'>一匹野马</span>，可我的家里没有<span style='color:green;font-weight: bold'>草原</span>。</div><div style='color:gray'>这让我感到绝望，董小姐。--<span style='color:black;font-weight: bold'>《董小姐》</span></div>","<div style='color:gray'>这是个拥挤的地方，而我却<span style='color:darkgreen;font-weight: bold'>很平凡</span>。</div>","<div style='color:gray'><span style='color:darkred;font-weight: bold'>Lolita,</span> light of my life, fire of my loins. <br>My sin, my soul. <br><span style='color:darkred;font-weight: bold'>Lo-lee-ta:</span> the tip of the tongue taking a trip of three steps down the palate to tap, at three, on the teeth. <span style='color:green;font-weight: bolder'>Lo. Lee. Ta.</span></div>","<div style='color:gray'>She was <span style='color:darkred;font-weight: bold'>Lo,</span> plain <span style='color:darkred;font-weight: bold'>Lo,</span> in the morning, standing four feet ten in one sock. <br>She was <span style='color:darkred;font-weight: bold'>Lola</span> in slacks. She was <span style='color:darkred;font-weight: bold'>Dolly</span> at school. <br>She was <span style='color:darkred;font-weight: bold'>Dolores</span> on the dotted line. <br><span style='color:darkred;font-weight: bolder'>But...</span></div>","<div style='color:gray'>“男女同权”的要义，不是让女人变得像男人一样，也不是让弱者变成强者。<br><span style='color:green;font-weight: bold'>“男女同权”追求的是，让弱者以弱者的姿态获得尊重。</spin></div>","<div style='color:gray'>金箍戴上之后，你再也不是个凡人，人世间的<span style='color:darkred;font-weight: bold'>情欲</span>再也不能沾半点，如果动心，这个金箍就会在你头上越收越紧，<span style='color:green;font-weight: bold'>苦不堪言。<span></div>"];var quote=quotes[Math.floor(Math.random()*quotes.length)];document.getElementById("quote").innerHTML=quote</script></body></html>

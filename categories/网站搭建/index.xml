@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>网站搭建 on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</link><description>Recent content in 网站搭建 on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Aug 2023 11:27:00 +0000</lastBuildDate><atom:link href="https://hluvmiku.tech/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>Re:你好，世界</title><link>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</link><pubDate>Sat, 26 Aug 2023 11:27:00 +0000</pubDate><guid>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</guid><description>原来的博客发生了什么</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>网站搭建 on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</link><description>Recent content in 网站搭建 on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Aug 2023 11:27:00 +0000</lastBuildDate><atom:link href="https://hluvmiku.tech/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>Re:你好，世界</title><link>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</link><pubDate>Sat, 26 Aug 2023 11:27:00 +0000</pubDate><guid>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308272034636.png" alt="Featured image of post Re:你好，世界" />&lt;h2 id="原来的博客发生了什么">原来的博客发生了什么？
+&lt;/h2>&lt;p>长话短说，我不小心把之前博客的数据库删了。&lt;br>
+就单纯是一不小心删除了了数据库文件。&lt;/p>
+&lt;h2 id="这是什么">这是什么？
+&lt;/h2>&lt;p>这是我用 &lt;code>Hugo&lt;/code> 搭建的博客，并使用 &lt;code>Github Actions&lt;/code> 自动部署。&lt;/p>
+&lt;p>所有图片通过 &lt;code>七牛云&lt;/code> 储存，本地上传采用了 &lt;code>PicGO&lt;/code>。&lt;br>
+全博客本着&lt;code>能用现成的就不造轮子&lt;/code>的宗旨。&lt;/p>
+&lt;p>感觉比上一个博客舒服多了，具体流程我会在之后的文章中分享。&lt;/p>
+&lt;h2 id="封面是什么">封面是什么？
+&lt;/h2>&lt;p>封面是我无意中翻出去年自己设计的第一款鼠标垫的私货款式，因为不符合某些要求，最后没做出来。&lt;/p>
+&lt;h2 id="总之因祸得福">总之，因祸得福
+&lt;/h2>&lt;p>这是我的第六版博客。&lt;/p>
+&lt;p>自己手写了3版，第一版是&lt;code>Django&lt;/code>乱做的，第二版是纯三件套搭的，第三版是用&lt;code>Vue3&lt;/code>搭的。&lt;br>
+第四版，也就是之前的博客，是用&lt;code>Hexo&lt;/code>搭的，部署在自己服务器上，但是被我手抖删除了。&lt;br>
+在这之后的半年里，我试着用&lt;code>wordpress&lt;/code>搭建过博客，不尽如人意，然后我又用&lt;code>Vue3&lt;/code>写了一个。&lt;br>
+但是我太懒了，感觉也没提升，就搁置了。&lt;/p>
+&lt;p>现在的这一版，我放弃了自己手动搭博客，也懒得再在本地搭了。&lt;br>
+托管在&lt;code>GitHub&lt;/code>上，用现成的框架，用OSS储存图片，如果不是因为我第四版博客崩了，我也绝对不会接受这套方案。&lt;/p>
+&lt;p>现在感觉这套方案很好🥰。&lt;/p></description></item></channel></rss>

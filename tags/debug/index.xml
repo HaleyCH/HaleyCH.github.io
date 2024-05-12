@@ -1,1 +1,195 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>debug on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/debug/</link><description>Recent content in debug on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 25 Oct 2023 15:36:23 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/debug/index.xml" rel="self" type="application/rss+xml"/><item><title>Solve Multi Times Backwards In pytorch</title><link>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</link><pubDate>Wed, 25 Oct 2023 15:36:23 +0800</pubDate><guid>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</guid><description>Tip 本文提供了torc</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Debug on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/debug/</link><description>Recent content in Debug on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 25 Oct 2023 15:36:23 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/debug/index.xml" rel="self" type="application/rss+xml"/><item><title>Solve Multi Times Backwards In pytorch</title><link>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</link><pubDate>Wed, 25 Oct 2023 15:36:23 +0800</pubDate><guid>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</guid><description>&lt;img src="https://cdn.hluvmiku.tech//image/202310251611268.png" alt="Featured image of post Solve Multi Times Backwards In pytorch" />
+&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>本文提供了torch报错&lt;code>Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed&lt;/code>的深入排查解决方案&lt;/p>&lt;/div>
+&lt;/div>
+&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>&lt;p>排查方法摘要：&lt;/p>
+&lt;ul>
+&lt;li>确认是否在一个iter中多次反向传播&lt;/li>
+&lt;li>确认是否在多个iters之间没调用optimizer.zero_grad()&lt;/li>
+&lt;li>可视化并确认是否及时detach()了模型参数&lt;/li>
+&lt;/ul>&lt;/p>&lt;/div>
+&lt;/div>
+&lt;h2 id="前言">前言
+&lt;/h2>&lt;p>实操pytorch也有几年了，虽然都是兴趣使然的小打小闹，但是各种问题或多或少都碰到过。&lt;br>
+一般来说，绝大多数torch的报错都可以Google到，或者在StackOverflow中找到相关解决方案。&lt;br>
+再不济，也可以去GitHub里相关issue中找到解决方案。&lt;/p>
+&lt;p>当然，作为最终武器，我们还有&lt;code>ChatGPT&lt;/code>，在现在8k上下文的情况下，基本上可以解决大部分问题。&lt;/p>
+&lt;p>但是很不幸，我遇到的是这个错误：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">RuntimeError: Trying to backward through the graph a second &lt;span class="nb">time&lt;/span> &lt;span class="o">(&lt;/span>or directly access saved tensors after they have already been freed&lt;span class="o">)&lt;/span>. Saved intermediate values of the graph are freed when you call .backward&lt;span class="o">()&lt;/span> or autograd.grad&lt;span class="o">()&lt;/span>. Specify &lt;span class="nv">retain_graph&lt;/span>&lt;span class="o">=&lt;/span>True &lt;span class="k">if&lt;/span> you need to backward through the graph a second &lt;span class="nb">time&lt;/span> or &lt;span class="k">if&lt;/span> you need to access saved tensors after calling backward.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>我一共遇到了3次这个问题，我之所以说&lt;code>很不幸&lt;/code>，是因为它debug起来极其困难，有的时候还会沦落到不得不可视化计算图的地步。
+甚至问GPT，它都只会给我笼统地说检查我是不是backwards了多次什么的，毫无参考性。&lt;/p>
+&lt;p>这个错误的意思是说在反向传播过程中，计算图在完成反向传播前就被释放了，导致无法再次反向传播。&lt;br>
+一般来说，我们在训练GAN时比较容易遇到，因为可能会有量要被要被反向传播训练G和D两个网络。这种情况下，就老老实实使用&lt;code>retain_graph=True&lt;/code>就好了。&lt;/p>
+&lt;p>其他情况请按照下文排查。&lt;/p>
+&lt;h2 id="常规检查">常规检查
+&lt;/h2>&lt;p>废话不多说，再深入研究代码前，先确定是不是由以下错误导致的：&lt;/p>
+&lt;ul>
+&lt;li>在一个iter中多次反向传播，即类似：
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">loss&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">backwards&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">loss&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">backwards&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>在多个iters之间没调用optimizer.zero_grad()，即类似：
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">loss&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">backwards&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">optimizer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">step&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>以上这两种情况请自行排查解决。&lt;/p>
+&lt;h2 id="继续深入">继续深入
+&lt;/h2>
+&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p>
+&lt;/div>
+&lt;div class="notice-body">&lt;p>&lt;p>&lt;strong>先说结论：某些该&lt;code>detach().clone()&lt;/code>的地方没有&lt;code>detach().clone()&lt;/code>。&lt;/strong>&lt;/p>
+&lt;p>如果不知道是哪里需要&lt;code>detach().clone()&lt;/code>，可以看我下方的实践。&lt;/p>
+&lt;/p>&lt;/div>
+&lt;/div>
+&lt;p>我没犯&lt;code>常规检查&lt;/code>中的两个错误，但还是出现了这种问题🤔。&lt;br>
+迫不得已，我继续深入研究。&lt;/p>
+&lt;p>我很快定位到问题出现在这一段代码：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@property&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">get_xyz_purturbed&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">unc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">sample_from_grid&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">grid&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">view&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">lb&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ub&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">noise&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">torch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">normal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">unc&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># pdb.set_trace()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">noise&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">noise&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">noise&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">reshape&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">shape&lt;/span>&lt;span class="p">[:&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>但是我不知道具体问题出在哪。&lt;/p>
+&lt;p>被折磨了好久😩，迫不得已我装了个&lt;code>torchviz&lt;/code>，用它的&lt;code>make_dot&lt;/code>可视化了一下计算图。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dot&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">make_dot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">loss&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dot&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">save&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s1">&amp;#39;loss.txt&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;img src="https://cdn.hluvmiku.tech//image/202310251555198.png"
+loading="lazy"
+alt="202310251555198"
+>
+*&lt;strong>不要在意我画的圈，这是我之前和学长讨论的时候留下来的&lt;/strong>&lt;br>
+（在线可视化工具&lt;a class="link" href="https://dreampuf.github.io/GraphvizOnline/" target="_blank" rel="noopener"
+>地址&lt;/a>）&lt;/p>
+&lt;p>其中，蓝色的方框是&lt;code>requires_grad=True&lt;/code>的模型参数，橙色的方框是&lt;code>requires_grad=False&lt;/code>的。灰色很显然是backwards的节点。&lt;/p>
+&lt;p>因为之前我测试过，能确定问题出在左边部分的计算图，我很快注意到了这里：
+&lt;img src="https://cdn.hluvmiku.tech//image/202310251557820.png"
+loading="lazy"
+alt="202310251557820"
+>&lt;/p>
+&lt;p>可以看到，在这里出现了两个&lt;code>requires_grad=True&lt;/code>的模型参数，这就是问题所在了。&lt;br>
+&lt;strong>以下是我对这个问题的理解，可能有错误，欢迎指正。&lt;/strong>&lt;/p>
+&lt;p>我认为出现这个问题是因为，一般来说，模型的计算图是类似于树一样的结构（不是很准确，因为非叶子结点之间互相可以连接），根节点是loss，叶子结点是模型参数，而像这样的畸形结构导致torch无法在正确的时机释放计算图，从而导致了这个错误。&lt;/p>
+&lt;p>于是我优化了一下代码，将&lt;code>self._xyz&lt;/code>（计算图中最顶上那个蓝色方块）detach并复制：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="nd">@property&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">get_xyz_purturbed&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">unc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">sample_from_grid&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">grid&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">cpu&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">detach&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">clone&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">view&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">lb&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ub&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">noise&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">torch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">normal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">unc&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># pdb.set_trace()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">noise&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">noise&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">noise&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">reshape&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">_xyz&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">shape&lt;/span>&lt;span class="p">[:&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">],&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这样就解决了问题。&lt;/p>
+&lt;p>可以看看我修改后的计算图：
+&lt;img src="https://cdn.hluvmiku.tech//image/202310251606170.png"
+loading="lazy"
+alt="202310251606170"
+>
+十分的干净利索。&lt;/p>
+&lt;h2 id="总结">总结
+&lt;/h2>&lt;p>多次反向传播是torch中较为棘手的问题，需要对torch的反向传播有一定的理解，并且要能完全明确自己的模型是如何backwards的。通常我们可以通过可视化计算图的方式来快速排查。&lt;/p></description></item></channel></rss>
