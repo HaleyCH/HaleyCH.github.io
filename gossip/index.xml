@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog Posts on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/gossip/</link><description>Recent content in Blog Posts on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 30 Dec 2023 23:18:43 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/gossip/index.xml" rel="self" type="application/rss+xml"/><item><title>Year End Summary 2023/12/30</title><link>https://hluvmiku.tech/gossip/year-end-summary-2023/12/30/</link><pubDate>Sat, 30 Dec 2023 23:18:43 +0800</pubDate><guid>https://hluvmiku.tech/gossip/year-end-summary-2023/12/30/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image202402271541817.png" alt="Featured image of post Year End Summary 2023/12/30" />&lt;p>老实说按年来总结挺难的，挺多事情挺没条理的。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog Posts on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/gossip/</link><description>Recent content in Blog Posts on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 12 May 2024 23:51:04 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/gossip/index.xml" rel="self" type="application/rss+xml"/><item><title>Again a New Blog</title><link>https://hluvmiku.tech/gossip/again-a-new-blog/</link><pubDate>Sun, 12 May 2024 23:51:04 +0800</pubDate><guid>https://hluvmiku.tech/gossip/again-a-new-blog/</guid><description>&lt;h2 id="说新也不新换个主题更好看">说“新”也不新，换个主题更好看
+&lt;/h2>&lt;p>考研着实累，周末换个口味。
+于是想到把博客翻新一下。&lt;/p>
+&lt;p>之前本着&lt;code>干净简洁&lt;/code>的原则，用的是&lt;a class="link" href="themes.gohugo.io/themes/hugoplate/" >hugoplate&lt;/a>主题，可是用到后来越发觉得不舒服，杂七杂八插件一堆，还用了很多第三方库。
+这着实是有点违背我的初衷。&lt;/p>
+&lt;p>本来长这样&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;img src="https://cdn.hluvmiku.tech/image202405130013544.png"
+loading="lazy"
+alt="202405130013544"
+>&lt;/p>
+&lt;/blockquote>
+&lt;p>随便找找，就看到了这个&lt;a class="link" href="stack.jimmycai.com/" >stack&lt;/a>主题。
+暴力改造了一个晚上，终于是给它迁移到这个主题了。&lt;/p>
+&lt;p>&lt;strong>本来就是杂谈，也没干货，就水到这里了。&lt;/strong>&lt;/p>
+&lt;hr>
+&lt;p>最近折腾了下群晖NAS的IPv6的DDNS，顺带研究了下Surge的配置文件和subconverter。&lt;br>
+还买了个AirPods Max，但是因为夹耳朵又退了。&lt;br>
+学生会也快换届了，全媒体有四个人留部长（说是这么说），挺好的。&lt;/p>
+&lt;hr>
+&lt;h2 id="说说考研吧">说说考研吧
+&lt;/h2>&lt;p>在复习，感觉效率还是低&lt;br>
+总是有杂七杂八的事情，另一方面我个人还总是收不住心&lt;/p>
+&lt;p>高数基础快过完了，还有线代离散。&lt;br>
+英语单词背的着实有点慢。&lt;br>
+408也还是刚起步。&lt;/p>
+&lt;p>还是慢啊。&lt;/p></description></item><item><title>Year End Summary 2023/12/30</title><link>https://hluvmiku.tech/gossip/year-end-summary-2023/12/30/</link><pubDate>Sat, 30 Dec 2023 23:18:43 +0800</pubDate><guid>https://hluvmiku.tech/gossip/year-end-summary-2023/12/30/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image202402271541817.png" alt="Featured image of post Year End Summary 2023/12/30" />&lt;p>老实说按年来总结挺难的，挺多事情挺没条理的。&lt;/p>
 &lt;details> &lt;summary>图文回顾&lt;/summary>
 &lt;p>2月：&lt;/p>
 &lt;ul>
