@@ -277,7 +277,7 @@ stroke-linejoin="round">&lt;/path>
 &lt;h2 id="5-结语">5 结语
 &lt;/h2>&lt;p>通过本文，你应该已经了解了如何启用Google Search Console API，以及如何调用Google Search Console API。&lt;/p>
 &lt;p>在一开始写这篇文章的时候，我混淆了Google Search Console API和Google Indexing API的逻辑，写到一半才意识到网站资源、token、域名所有权验证之间的逻辑关系，于是我把整篇文章重写了一遍。&lt;br>
-可谓教学相长了。&lt;/p></description></item><item><title>Automatic Submit Your Page</title><link>https://hluvmiku.tech/blog/automatic-submit-your-page/</link><pubDate>Tue, 29 Aug 2023 16:16:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/automatic-submit-your-page/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308291727641.png" alt="Featured image of post Automatic Submit Your Page" />
+可谓教学相长了。&lt;/p></description></item><item><title>Automatic Submit Your Page</title><link>https://hluvmiku.tech/blog/automatic-submit-your-page/</link><pubDate>Tue, 29 Aug 2023 16:16:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/automatic-submit-your-page/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308291727641.png-small.webp" alt="Featured image of post Automatic Submit Your Page" />
 &lt;div class="notice tip">
 &lt;div class="notice-head">&lt;svg
 width="20"
@@ -615,7 +615,7 @@ fill="currentColor" />
 &lt;/svg>&lt;p>Tip&lt;/p>
 &lt;/div>
 &lt;div class="notice-body">&lt;p>&lt;p>开通&lt;code>GitHub Pro&lt;/code>或者通过&lt;code>GitHub Education&lt;/code>认证可以获得更多的配额。&lt;/p>
-&lt;p>&lt;img src="https://cdn.hluvmiku.tech/blog/202308291656074.png"
+&lt;p>&lt;img src="https://cdn.hluvmiku.tech/blog/202308291656074.png-small.webp"
 loading="lazy"
 alt="202308291656074"
 >&lt;/p>
