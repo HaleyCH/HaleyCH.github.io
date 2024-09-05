@@ -1768,16 +1768,16 @@ fill="currentColor" />
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>方法&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>说明&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>方法&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>说明&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>查询&lt;/td>
-&lt;td>&lt;code>POST /sites/siteUrl/searchAnalytics/query&lt;/code>&lt;/td>
-&lt;td>使用您定义的过滤条件和参数查询搜索流量数据。该方法会返回您定义的行键（维度）分组的零行或多行。您必须定义一个或多个日期的日期范围。&lt;/td>
+&lt;td style="text-align: left">查询&lt;/td>
+&lt;td style="text-align: left">&lt;code>POST /sites/siteUrl/searchAnalytics/query&lt;/code>&lt;/td>
+&lt;td style="text-align: left">使用您定义的过滤条件和参数查询搜索流量数据。该方法会返回您定义的行键（维度）分组的零行或多行。您必须定义一个或多个日期的日期范围。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1804,31 +1804,31 @@ fill="currentColor" />
 &lt;/h3>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>方法&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>说明&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>方法&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>说明&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>delete&lt;/td>
-&lt;td>DELETE /sites/siteUrl/sitemaps/feedpath&lt;/td>
-&lt;td>从此网站中删除站点地图。&lt;/td>
+&lt;td style="text-align: left">delete&lt;/td>
+&lt;td style="text-align: left">DELETE /sites/siteUrl/sitemaps/feedpath&lt;/td>
+&lt;td style="text-align: left">从此网站中删除站点地图。&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>get&lt;/td>
-&lt;td>GET /sites/siteUrl/sitemaps/feedpath&lt;/td>
-&lt;td>检索关于特定站点地图的信息。&lt;/td>
+&lt;td style="text-align: left">get&lt;/td>
+&lt;td style="text-align: left">GET /sites/siteUrl/sitemaps/feedpath&lt;/td>
+&lt;td style="text-align: left">检索关于特定站点地图的信息。&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>list&lt;/td>
-&lt;td>GET /sites/siteUrl/sitemaps&lt;/td>
-&lt;td>列出为此网站提交的站点地图条目，或包含在站点地图索引文件中（如果请求中指定 sitemapIndex）。&lt;/td>
+&lt;td style="text-align: left">list&lt;/td>
+&lt;td style="text-align: left">GET /sites/siteUrl/sitemaps&lt;/td>
+&lt;td style="text-align: left">列出为此网站提交的站点地图条目，或包含在站点地图索引文件中（如果请求中指定 sitemapIndex）。&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>提交&lt;/td>
-&lt;td>PUT /sites/siteUrl/sitemaps/feedpath&lt;/td>
-&lt;td>为网站提交站点地图。&lt;/td>
+&lt;td style="text-align: left">提交&lt;/td>
+&lt;td style="text-align: left">PUT /sites/siteUrl/sitemaps/feedpath&lt;/td>
+&lt;td style="text-align: left">为网站提交站点地图。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1836,31 +1836,31 @@ fill="currentColor" />
 &lt;/h3>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>方法&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>说明&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>方法&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>说明&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>添加&lt;/td>
-&lt;td>PUT /sites/siteUrl&lt;/td>
-&lt;td>将网站添加到 Search Console 中的用户网站集。&lt;/td>
+&lt;td style="text-align: left">添加&lt;/td>
+&lt;td style="text-align: left">PUT /sites/siteUrl&lt;/td>
+&lt;td style="text-align: left">将网站添加到 Search Console 中的用户网站集。&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>delete&lt;/td>
-&lt;td>DELETE /sites/siteUrl&lt;/td>
-&lt;td>从用户的 Search Console 网站集中移除某个网站。&lt;/td>
+&lt;td style="text-align: left">delete&lt;/td>
+&lt;td style="text-align: left">DELETE /sites/siteUrl&lt;/td>
+&lt;td style="text-align: left">从用户的 Search Console 网站集中移除某个网站。&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>get&lt;/td>
-&lt;td>GET /sites/siteUrl&lt;/td>
-&lt;td>检索关于特定网站的信息。&lt;/td>
+&lt;td style="text-align: left">get&lt;/td>
+&lt;td style="text-align: left">GET /sites/siteUrl&lt;/td>
+&lt;td style="text-align: left">检索关于特定网站的信息。&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>list&lt;/td>
-&lt;td>GET /sites&lt;/td>
-&lt;td>列出用户的 Search Console 网站。&lt;/td>
+&lt;td style="text-align: left">list&lt;/td>
+&lt;td style="text-align: left">GET /sites&lt;/td>
+&lt;td style="text-align: left">列出用户的 Search Console 网站。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1868,16 +1868,16 @@ fill="currentColor" />
 &lt;/h3>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>方法&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>说明&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>方法&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>HTTP 请求&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>说明&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>index.inspect&lt;/td>
-&lt;td>POST /urlInspection/index:inspect&lt;/td>
-&lt;td>与 Google 索引中提供的网址相关的信息。&lt;/td>
+&lt;td style="text-align: left">index.inspect&lt;/td>
+&lt;td style="text-align: left">POST /urlInspection/index:inspect&lt;/td>
+&lt;td style="text-align: left">与 Google 索引中提供的网址相关的信息。&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
