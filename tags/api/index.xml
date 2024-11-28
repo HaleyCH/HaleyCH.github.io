@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/api/</link><description>Recent content in API on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 29 Aug 2023 16:24:49 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Enable Google Search Console API</title><link>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</link><pubDate>Tue, 29 Aug 2023 16:24:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308301902385.png" alt="Featured image of post How to Enable Google Search Console API" />&lt;div class="notice tip">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on HaleyCH 的个人博客</title><link>https://hluvmiku.tech/tags/api/</link><description>Recent content in API on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 29 Aug 2023 16:24:49 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>iPhone Street Snap - HangZhou City Park</title><link>https://hluvmiku.tech/blog/iphone-street-snap-hangzhou-city-park/</link><pubDate>Sun, 19 May 2024 16:20:10 +0800</pubDate><guid>https://hluvmiku.tech/blog/iphone-street-snap-hangzhou-city-park/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618669.jpg-small.webp" alt="Featured image of post iPhone Street Snap - HangZhou City Park" />&lt;p>这一次主打光影+线条。&lt;br>
+算是对自己审美构图后期的测试。&lt;/p></description></item><item><title>AirPods Max:Why I Opted a Refund</title><link>https://hluvmiku.tech/blog/airpods-maxwhy-i-opted-a-refund/</link><pubDate>Tue, 14 May 2024 16:14:38 +0800</pubDate><guid>https://hluvmiku.tech/blog/airpods-maxwhy-i-opted-a-refund/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202405141717909.heic" alt="Featured image of post AirPods Max:Why I Opted a Refund" />&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p></description></item><item><title>Postgraduate Exam Wallpaper</title><link>https://hluvmiku.tech/blog/postgraduate-exam-wallpaper/</link><pubDate>Thu, 18 Apr 2024 11:22:05 +0800</pubDate><guid>https://hluvmiku.tech/blog/postgraduate-exam-wallpaper/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202404181135472.png-small.webp" alt="Featured image of post Postgraduate Exam Wallpaper" />&lt;div class="notice tip">
 &lt;div class="notice-head">&lt;svg
 width="20"
 height="20"
@@ -10,4 +24,143 @@ fillRule="evenodd"
 clipRule="evenodd"
 d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
 fill="currentColor" />
-&lt;/svg>&lt;p>Tip&lt;/p></description></item></channel></rss>
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Build SysY Lex Analyzer With FLex</title><link>https://hluvmiku.tech/blog/build-sysy-lex-analyzer-with-flex/</link><pubDate>Tue, 05 Dec 2023 18:50:26 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-sysy-lex-analyzer-with-flex/</guid><description>&lt;img src="https://cdn.hluvmiku.tech//image/202312051936450.png" alt="Featured image of post Build SysY Lex Analyzer With FLex" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Solve Multi Times Backwards In pytorch</title><link>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</link><pubDate>Wed, 25 Oct 2023 15:36:23 +0800</pubDate><guid>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</guid><description>&lt;img src="https://cdn.hluvmiku.tech//image/202310251611268.png" alt="Featured image of post Solve Multi Times Backwards In pytorch" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Princlples of Compiler Experiments</title><link>https://hluvmiku.tech/blog/princlples-of-compiler-experiments/</link><pubDate>Tue, 24 Oct 2023 14:48:51 +0800</pubDate><guid>https://hluvmiku.tech/blog/princlples-of-compiler-experiments/</guid><description>&lt;img src="https://cdn.hluvmiku.tech//image/202310241501131.png" alt="Featured image of post Princlples of Compiler Experiments" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Create Your Custom Email Domain With ICloud Plus</title><link>https://hluvmiku.tech/blog/create-your-custom-email-domain-with-icloud-plus/</link><pubDate>Tue, 10 Oct 2023 19:44:57 +0800</pubDate><guid>https://hluvmiku.tech/blog/create-your-custom-email-domain-with-icloud-plus/</guid><description>&lt;img src="https://cdn.hluvmiku.tech//image/202310102031515.png" alt="Featured image of post Create Your Custom Email Domain With ICloud Plus" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Use LLM in Your Console</title><link>https://hluvmiku.tech/blog/use-llm-in-your-console/</link><pubDate>Wed, 13 Sep 2023 15:49:15 +0800</pubDate><guid>https://hluvmiku.tech/blog/use-llm-in-your-console/</guid><description>&lt;img src="https://cdn.hluvmiku.tech//image/202309131725183.png" alt="Featured image of post Use LLM in Your Console" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Screenshot to Reminders</title><link>https://hluvmiku.tech/blog/screenshot-to-reminders/</link><pubDate>Tue, 12 Sep 2023 14:51:52 +0800</pubDate><guid>https://hluvmiku.tech/blog/screenshot-to-reminders/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121546372.png" alt="Featured image of post Screenshot to Reminders" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>How to Enable Google Search Console API</title><link>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</link><pubDate>Tue, 29 Aug 2023 16:24:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308301902385.png" alt="Featured image of post How to Enable Google Search Console API" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Automatic Submit Your Page</title><link>https://hluvmiku.tech/blog/automatic-submit-your-page/</link><pubDate>Tue, 29 Aug 2023 16:16:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/automatic-submit-your-page/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308291727641.png-small.webp" alt="Featured image of post Automatic Submit Your Page" />&lt;div class="notice tip">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+fillRule="evenodd"
+clipRule="evenodd"
+d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12 2.4C6.69807 2.4 2.4 6.69807 2.4 12C2.4 17.3019 6.69807 21.6 12 21.6C17.3019 21.6 21.6 17.3019 21.6 12C21.6 6.69807 17.3019 2.4 12 2.4ZM15.9515 7.55147L9.6 13.9029L8.04853 12.3515C7.5799 11.8828 6.8201 11.8828 6.35147 12.3515C5.88284 12.8201 5.88284 13.5799 6.35147 14.0485L8.75147 16.4485C9.2201 16.9172 9.9799 16.9172 10.4485 16.4485L17.6485 9.24853C18.1172 8.7799 18.1172 8.0201 17.6485 7.55147C17.1799 7.08284 16.4201 7.08284 15.9515 7.55147Z"
+fill="currentColor" />
+&lt;/svg>&lt;p>Tip&lt;/p></description></item><item><title>Nintendo Switch Joycon Simulator</title><link>https://hluvmiku.tech/blog/nintendo-switch-joycon-simulator/</link><pubDate>Mon, 28 Aug 2023 15:43:40 +0800</pubDate><guid>https://hluvmiku.tech/blog/nintendo-switch-joycon-simulator/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281657027.JPG" alt="Featured image of post Nintendo Switch Joycon Simulator" />&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p></description></item><item><title>Build Your Blog 2</title><link>https://hluvmiku.tech/blog/build-your-blog-2/</link><pubDate>Mon, 28 Aug 2023 14:35:20 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-your-blog-2/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281503218.png" alt="Featured image of post Build Your Blog 2" />&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p></description></item><item><title>Build Your Blog 1</title><link>https://hluvmiku.tech/blog/build-your-blog-1/</link><pubDate>Mon, 28 Aug 2023 11:43:57 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-your-blog-1/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281329993.png" alt="Featured image of post Build Your Blog 1" />&lt;h2 id="1-前言">1 前言
+&lt;/h2>
+&lt;div class="notice note">
+&lt;div class="notice-head">&lt;svg
+width="20"
+height="20"
+viewBox="0 0 20 20"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+&lt;path
+d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.1002V6H10.0498Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round">&lt;/path>
+&lt;/svg>&lt;p>Note&lt;/p></description></item><item><title>Re:你好，世界</title><link>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</link><pubDate>Sat, 26 Aug 2023 11:27:00 +0000</pubDate><guid>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308272034636.png" alt="Featured image of post Re:你好，世界" />&lt;h2 id="原来的博客发生了什么">原来的博客发生了什么？
+&lt;/h2>&lt;p>长话短说，我不小心把之前博客的数据库删了。&lt;br>
+就单纯是一不小心删除了了数据库文件。&lt;/p></description></item></channel></rss>
