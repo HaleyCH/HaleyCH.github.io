@@ -1,223 +1,235 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HaleyCH 的个人博客</title><link>https://hluvmiku.tech/</link><description>Recent content on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 28 Nov 2024 23:04:33 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/index.xml" rel="self" type="application/rss+xml"/><item><title>Populus Euphratica</title><link>https://hluvmiku.tech/blog/populus-euphratica/</link><pubDate>Thu, 28 Nov 2024 23:04:33 +0800</pubDate><guid>https://hluvmiku.tech/blog/populus-euphratica/</guid><description>&lt;iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/kashgar-populus-euphratica/1725062049?i=1725062050">&lt;/iframe>
-&lt;blockquote>
-&lt;p>&lt;p>我不怕雨打风吹日晒&lt;br>
-被大漠风沙伤害&lt;br>
-让心暴露在阳光下&lt;br>
-对你表白&lt;/p>
-&lt;p>我宁愿我的身躯&lt;br>
-被岁月点点风化&lt;br>
-也要让你感觉到&lt;br>
-我的真爱&lt;/p>
-&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>刀郎, &lt;/span>&lt;a href="https://music.apple.com/us/album/kashgar-populus-euphratica/1725062049?i=1725062050">&lt;cite>喀什噶尔胡杨，Apple Music&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
-&lt;p>胡杨（学名：Populus euphratica），又称胡桐（《汉书》）、英雄树、异叶胡杨、异叶杨、水桐，是杨柳科杨属胡杨亚属的一种植物，常生长在沙漠中，它耐寒、耐旱、耐盐碱、抗风沙，有很强的生命力；在水分好的条件下，寿命可达百年左右，被形容为“胡杨生而千年不死，死而千年不倒，倒而千年不烂”。胡杨是生长在沙漠的唯一乔木树种，且十分珍贵，可以和有“植物活化石”之称的银杏树相媲美。&lt;/p></description></item><item><title>iPhone Street Snap - HangZhou City Park</title><link>https://hluvmiku.tech/blog/iphone-street-snap-hangzhou-city-park/</link><pubDate>Sun, 19 May 2024 16:20:10 +0800</pubDate><guid>https://hluvmiku.tech/blog/iphone-street-snap-hangzhou-city-park/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618669.jpg-small.webp" alt="Featured image of post iPhone Street Snap - HangZhou City Park" />&lt;p>这一次主打光影+线条。&lt;br>
-算是对自己审美构图后期的测试。&lt;/p>
-&lt;p>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618679.JPG-small.webp"
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HaleyCH 的个人博客</title><link>https://hluvmiku.tech/</link><description>Recent content on HaleyCH 的个人博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 23 Dec 2024 22:28:40 +0800</lastBuildDate><atom:link href="https://hluvmiku.tech/index.xml" rel="self" type="application/rss+xml"/><item><title>Encrypt Test</title><link>https://hluvmiku.tech/blog/encrypt-test/</link><pubDate>Mon, 23 Dec 2024 22:28:40 +0800</pubDate><guid>https://hluvmiku.tech/blog/encrypt-test/</guid><description>&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="notice note"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" /&gt;
+&lt;/svg&gt;&lt;p&gt;Note&lt;/p&gt;</description></item><item><title>Populus Euphratica</title><link>https://hluvmiku.tech/blog/populus-euphratica/</link><pubDate>Thu, 28 Nov 2024 23:04:33 +0800</pubDate><guid>https://hluvmiku.tech/blog/populus-euphratica/</guid><description>&lt;iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/kashgar-populus-euphratica/1725062049?i=1725062050"&gt;&lt;/iframe&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;p&gt;我不怕雨打风吹日晒&lt;br&gt;
+被大漠风沙伤害&lt;br&gt;
+让心暴露在阳光下&lt;br&gt;
+对你表白&lt;/p&gt;
+&lt;p&gt;我宁愿我的身躯&lt;br&gt;
+被岁月点点风化&lt;br&gt;
+也要让你感觉到&lt;br&gt;
+我的真爱&lt;/p&gt;
+&lt;/p&gt;&lt;span class="cite"&gt;&lt;span&gt;― &lt;/span&gt;&lt;span&gt;刀郎, &lt;/span&gt;&lt;a href="https://music.apple.com/us/album/kashgar-populus-euphratica/1725062049?i=1725062050"&gt;&lt;cite&gt;喀什噶尔胡杨，Apple Music&lt;/cite&gt;&lt;/a&gt;&lt;/span&gt;&lt;/blockquote&gt;
+&lt;p&gt;胡杨（学名：Populus euphratica），又称胡桐（《汉书》）、英雄树、异叶胡杨、异叶杨、水桐，是杨柳科杨属胡杨亚属的一种植物，常生长在沙漠中，它耐寒、耐旱、耐盐碱、抗风沙，有很强的生命力；在水分好的条件下，寿命可达百年左右，被形容为“胡杨生而千年不死，死而千年不倒，倒而千年不烂”。胡杨是生长在沙漠的唯一乔木树种，且十分珍贵，可以和有“植物活化石”之称的银杏树相媲美。&lt;/p&gt;</description></item><item><title>iPhone Street Snap - HangZhou City Park</title><link>https://hluvmiku.tech/blog/iphone-street-snap-hangzhou-city-park/</link><pubDate>Sun, 19 May 2024 16:20:10 +0800</pubDate><guid>https://hluvmiku.tech/blog/iphone-street-snap-hangzhou-city-park/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618669.jpg-small.webp" alt="Featured image of post iPhone Street Snap - HangZhou City Park" /&gt;&lt;p&gt;这一次主打光影+线条。&lt;br&gt;
+算是对自己审美构图后期的测试。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618679.JPG-small.webp"
 loading="lazy"
 alt="202405191618679"
->&lt;/p>
-&lt;p>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618673.JPG-small.webp"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618673.JPG-small.webp"
 loading="lazy"
 alt="202405191618673"
->
+&gt;
 &lt;img src="https://cdn.hluvmiku.tech/image/image202405191618672.JPG-small.webp"
 loading="lazy"
 alt="202405191618672"
->&lt;/p>
-&lt;p>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618671.JPG-small.webp"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618671.JPG-small.webp"
 loading="lazy"
 alt="202405191618671"
->
+&gt;
 &lt;img src="https://cdn.hluvmiku.tech/image/image202405191618674.JPG-small.webp"
 loading="lazy"
 alt="202405191618674"
->&lt;/p>
-&lt;p>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618677.JPG-small.webp"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618677.JPG-small.webp"
 loading="lazy"
 alt="202405191618677"
->&lt;/p>
-&lt;p>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618675.JPG-small.webp"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618675.JPG-small.webp"
 loading="lazy"
 alt="202405191618675"
->
+&gt;
 &lt;img src="https://cdn.hluvmiku.tech/image/image202405191618676.JPG-small.webp"
 loading="lazy"
 alt="202405191618676"
->&lt;/p>
-&lt;p>&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618670.JPG-small.webp"
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://cdn.hluvmiku.tech/image/image202405191618670.JPG-small.webp"
 loading="lazy"
 alt="202405191618670"
->&lt;/p></description></item><item><title>AirPods Max:Why I Opted a Refund</title><link>https://hluvmiku.tech/blog/airpods-maxwhy-i-opted-a-refund/</link><pubDate>Tue, 14 May 2024 16:14:38 +0800</pubDate><guid>https://hluvmiku.tech/blog/airpods-maxwhy-i-opted-a-refund/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202405141717909.heic" alt="Featured image of post AirPods Max:Why I Opted a Refund" />&lt;div class="notice note">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-&lt;/svg>&lt;p>Note&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>前面有好多废话，可以直接无视。&lt;/p>&lt;/div>
-&lt;/div>
-&lt;blockquote>
-&lt;p>为了你&lt;br>
-失去你&lt;br>
-狠心扮演伤害你😭&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>阿木, &lt;/span>&lt;a href="https://music.apple.com/us/album/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%88%B1%E5%8F%AB%E5%81%9A%E6%94%BE%E6%89%8B/1581377217?i=1581377218&amp;amp;l=zh-Hans-CN">&lt;cite>有一种爱叫做放手，Apple Music&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
-&lt;p>AirPods Max就音质和外观来说，都是十分优秀的。&lt;br>
-但由于诸多本人实际体验上的不便，我还是放弃了它。&lt;/p></description></item><item><title>Again a New Blog</title><link>https://hluvmiku.tech/blog/again-a-new-blog/</link><pubDate>Sun, 12 May 2024 23:51:04 +0800</pubDate><guid>https://hluvmiku.tech/blog/again-a-new-blog/</guid><description>&lt;h2 id="说新也不新换个主题更好看">说“新”也不新，换个主题更好看
-&lt;/h2>&lt;p>考研着实累，周末换个口味。
-于是想到把博客翻新一下。&lt;/p>
-&lt;p>之前本着&lt;code>干净简洁&lt;/code>的原则，用的是&lt;a class="link" href="themes.gohugo.io/themes/hugoplate/" >hugoplate&lt;/a>主题，可是用到后来越发觉得不舒服，杂七杂八插件一堆，还用了很多第三方库。
-这着实是有点违背我的初衷。&lt;/p></description></item><item><title>Postgraduate Exam Wallpaper</title><link>https://hluvmiku.tech/blog/postgraduate-exam-wallpaper/</link><pubDate>Thu, 18 Apr 2024 11:22:05 +0800</pubDate><guid>https://hluvmiku.tech/blog/postgraduate-exam-wallpaper/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202404181135472.png-small.webp" alt="Featured image of post Postgraduate Exam Wallpaper" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>不定期更新
-上次更新时间：2024-04-18&lt;/p></description></item><item><title>Year End Summary 2023/12/30</title><link>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</link><pubDate>Sat, 30 Dec 2023 23:18:43 +0800</pubDate><guid>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202402271541817.png" alt="Featured image of post Year End Summary 2023/12/30" />&lt;p>老实说按年来总结挺难的，挺多事情挺没条理的。&lt;/p>
-&lt;details> &lt;summary>图文回顾&lt;/summary>
-&lt;p>2月：&lt;/p>
-&lt;ul>
-&lt;li>换MacBook和iPhone
-3月：&lt;/li>
-&lt;li>部门聚餐+定位抓人&lt;/li>
-&lt;li>给彪彪过生日&lt;/li>
-&lt;li>铃芽之旅&lt;br>
+&gt;&lt;/p&gt;</description></item><item><title>AirPods Max:Why I Opted a Refund</title><link>https://hluvmiku.tech/blog/airpods-maxwhy-i-opted-a-refund/</link><pubDate>Tue, 14 May 2024 16:14:38 +0800</pubDate><guid>https://hluvmiku.tech/blog/airpods-maxwhy-i-opted-a-refund/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202405141717909.heic" alt="Featured image of post AirPods Max:Why I Opted a Refund" /&gt;&lt;div class="notice note"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" /&gt;
+&lt;/svg&gt;&lt;p&gt;Note&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;前面有好多废话，可以直接无视。&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为了你&lt;br&gt;
+失去你&lt;br&gt;
+狠心扮演伤害你😭&lt;/p&gt;&lt;span class="cite"&gt;&lt;span&gt;― &lt;/span&gt;&lt;span&gt;阿木, &lt;/span&gt;&lt;a href="https://music.apple.com/us/album/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%88%B1%E5%8F%AB%E5%81%9A%E6%94%BE%E6%89%8B/1581377217?i=1581377218&amp;amp;l=zh-Hans-CN"&gt;&lt;cite&gt;有一种爱叫做放手，Apple Music&lt;/cite&gt;&lt;/a&gt;&lt;/span&gt;&lt;/blockquote&gt;
+&lt;p&gt;AirPods Max就音质和外观来说，都是十分优秀的。&lt;br&gt;
+但由于诸多本人实际体验上的不便，我还是放弃了它。&lt;/p&gt;</description></item><item><title>Again a New Blog</title><link>https://hluvmiku.tech/blog/again-a-new-blog/</link><pubDate>Sun, 12 May 2024 23:51:04 +0800</pubDate><guid>https://hluvmiku.tech/blog/again-a-new-blog/</guid><description>&lt;h2 id="说新也不新换个主题更好看"&gt;说“新”也不新，换个主题更好看
+&lt;/h2&gt;&lt;p&gt;考研着实累，周末换个口味。
+于是想到把博客翻新一下。&lt;/p&gt;
+&lt;p&gt;之前本着&lt;code&gt;干净简洁&lt;/code&gt;的原则，用的是&lt;a class="link" href="themes.gohugo.io/themes/hugoplate/" &gt;hugoplate&lt;/a&gt;主题，可是用到后来越发觉得不舒服，杂七杂八插件一堆，还用了很多第三方库。
+这着实是有点违背我的初衷。&lt;/p&gt;</description></item><item><title>Postgraduate Exam Wallpaper</title><link>https://hluvmiku.tech/blog/postgraduate-exam-wallpaper/</link><pubDate>Thu, 18 Apr 2024 11:22:05 +0800</pubDate><guid>https://hluvmiku.tech/blog/postgraduate-exam-wallpaper/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202404181135472.png-small.webp" alt="Featured image of post Postgraduate Exam Wallpaper" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;不定期更新
+上次更新时间：2024-04-18&lt;/p&gt;</description></item><item><title>Year End Summary 2023/12/30</title><link>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</link><pubDate>Sat, 30 Dec 2023 23:18:43 +0800</pubDate><guid>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202402271541817.png" alt="Featured image of post Year End Summary 2023/12/30" /&gt;&lt;p&gt;老实说按年来总结挺难的，挺多事情挺没条理的。&lt;/p&gt;
+&lt;details&gt; &lt;summary&gt;图文回顾&lt;/summary&gt;
+&lt;p&gt;2月：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;换MacBook和iPhone
+3月：&lt;/li&gt;
+&lt;li&gt;部门聚餐+定位抓人&lt;/li&gt;
+&lt;li&gt;给彪彪过生日&lt;/li&gt;
+&lt;li&gt;铃芽之旅&lt;br&gt;
 &lt;img src="https://cdn.hluvmiku.tech/image/202312310023324.jpeg"
 loading="lazy"
 alt="202312310023324"
->&lt;/li>
-&lt;li>小解源源表情包&lt;br>
+&gt;&lt;/li&gt;
+&lt;li&gt;小解源源表情包&lt;br&gt;
 &lt;img src="https://cdn.hluvmiku.tech/image/202312310023325.jpeg"
 loading="lazy"
 alt="202312310023325"
->&lt;/li>
-&lt;li>IT科技文化月筹备&lt;br>
+&gt;&lt;/li&gt;
+&lt;li&gt;IT科技文化月筹备&lt;br&gt;
 &lt;img src="https://cdn.hluvmiku.tech/image/202312310023326.jpeg"
 loading="lazy"
 alt="202312310023326"
->&lt;/li>
-&lt;/ul>
-&lt;p>4月：&lt;/p></description></item><item><title>Build SysY Lex Analyzer With FLex</title><link>https://hluvmiku.tech/blog/build-sysy-lex-analyzer-with-flex/</link><pubDate>Tue, 05 Dec 2023 18:50:26 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-sysy-lex-analyzer-with-flex/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202312051936450.png" alt="Featured image of post Build SysY Lex Analyzer With FLex" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>&lt;p>通过本文，你将了解：&lt;/p>
-&lt;ul>
-&lt;li>FLex基本操作&lt;/li>
-&lt;li>如何通过FLex编写一个简单的词法分析器&lt;/li>
-&lt;/ul>&lt;/p></description></item><item><title>Solve Multi Times Backwards In pytorch</title><link>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</link><pubDate>Wed, 25 Oct 2023 15:36:23 +0800</pubDate><guid>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310251611268.png" alt="Featured image of post Solve Multi Times Backwards In pytorch" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>本文提供了torch报错&lt;code>Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed&lt;/code>的深入排查解决方案&lt;/p></description></item><item><title>Princlples of Compiler Experiment2</title><link>https://hluvmiku.tech/blog/princlples-of-compiler-experiment2/</link><pubDate>Tue, 24 Oct 2023 14:56:42 +0800</pubDate><guid>https://hluvmiku.tech/blog/princlples-of-compiler-experiment2/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310241500383.png" alt="Featured image of post Princlples of Compiler Experiment2" />&lt;hr>
-&lt;h4 id="11-如果在命令行下执行-gcc--dneg--e-samplec--o-samplei-生成的-samplei-与之前的有何区别">1.1 如果在命令行下执行 gcc -DNEG -E sample.c -o sample.i 生成的 sample.i 与之前的有何区别?
-&lt;/h4>&lt;ul>
-&lt;li>&lt;code>-D&lt;/code>定义了&lt;code>NEG&lt;/code>变量，因此在预处理时，&lt;code>M&lt;/code>将被替换为-4，而不加&lt;code>-DNEG&lt;/code>，&lt;code>M&lt;/code>将赋值为4。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h4 id="12-请对比-sample-32s-和-samples-找出它们的区别并上网检索给出产生这些区别的原因如">1.2 请对比 sample-32.s 和 sample.s ，找出它们的区别，并上网检索给出产生这些区别的原因。如:
-&lt;/h4>&lt;h5 id="pushq-和-pushl">pushq 和 pushl
-&lt;/h5>&lt;ul>
-&lt;li>&lt;code>pushl&lt;/code>与&lt;code>pushq&lt;/code>的区别在于操作的位数不同，具体来说&lt;code>pushl&lt;/code>压入一个&lt;strong>双字&lt;/strong>的长度即32位，而&lt;code>pushq&lt;/code>压入一个&lt;strong>四字&lt;/strong>的长度即64位。在32位系统中，&lt;code>ebp&lt;/code>为32位，而在64位系统中，&lt;code>rbp&lt;/code>为64位。&lt;/li>
-&lt;/ul>
-&lt;p>补充:&lt;/p></description></item><item><title>Princlples of Compiler Experiments</title><link>https://hluvmiku.tech/blog/princlples-of-compiler-experiments/</link><pubDate>Tue, 24 Oct 2023 14:48:51 +0800</pubDate><guid>https://hluvmiku.tech/blog/princlples-of-compiler-experiments/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310241501131.png" alt="Featured image of post Princlples of Compiler Experiments" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>&lt;p>本文汇总了我的所有编译原理实验报告，仅供参考。&lt;/p>
-&lt;p>如有疑问或实验报告有误，可以留言，我会及时修改。&lt;/p></description></item><item><title>Stage Summary 2023/10/19</title><link>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</link><pubDate>Thu, 19 Oct 2023 21:09:08 +0800</pubDate><guid>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310192152932.png" alt="Featured image of post Stage Summary 2023/10/19" />&lt;h2 id="to-bigin-with">To Bigin With:
-&lt;/h2>&lt;p>先讲讲实验室吧。&lt;br>
-折腾了一个暑假&lt;code>LERF&lt;/code>和&lt;code>Segment Anything&lt;/code>，但是在磨洋工。&lt;br>
-这周认真干了一两天就有突破了。（写文章的时候正在训练实验，显存不太够，故下图没有显示&lt;code>SAM&lt;/code>的结果。）
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4月：&lt;/p&gt;</description></item><item><title>Build SysY Lex Analyzer With FLex</title><link>https://hluvmiku.tech/blog/build-sysy-lex-analyzer-with-flex/</link><pubDate>Tue, 05 Dec 2023 18:50:26 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-sysy-lex-analyzer-with-flex/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202312051936450.png" alt="Featured image of post Build SysY Lex Analyzer With FLex" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;&lt;p&gt;通过本文，你将了解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;FLex基本操作&lt;/li&gt;
+&lt;li&gt;如何通过FLex编写一个简单的词法分析器&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description></item><item><title>Solve Multi Times Backwards In pytorch</title><link>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</link><pubDate>Wed, 25 Oct 2023 15:36:23 +0800</pubDate><guid>https://hluvmiku.tech/blog/solve-multi-times-backwards-in-pytorch/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310251611268.png" alt="Featured image of post Solve Multi Times Backwards In pytorch" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;本文提供了torch报错&lt;code&gt;Trying to backward through the graph a second time (or directly access saved tensors after they have already been freed&lt;/code&gt;的深入排查解决方案&lt;/p&gt;</description></item><item><title>Princlples of Compiler Experiment2</title><link>https://hluvmiku.tech/blog/princlples-of-compiler-experiment2/</link><pubDate>Tue, 24 Oct 2023 14:56:42 +0800</pubDate><guid>https://hluvmiku.tech/blog/princlples-of-compiler-experiment2/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310241500383.png" alt="Featured image of post Princlples of Compiler Experiment2" /&gt;&lt;hr&gt;
+&lt;h4 id="11-如果在命令行下执行-gcc--dneg--e-samplec--o-samplei-生成的-samplei-与之前的有何区别"&gt;1.1 如果在命令行下执行 gcc -DNEG -E sample.c -o sample.i 生成的 sample.i 与之前的有何区别?
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-D&lt;/code&gt;定义了&lt;code&gt;NEG&lt;/code&gt;变量，因此在预处理时，&lt;code&gt;M&lt;/code&gt;将被替换为-4，而不加&lt;code&gt;-DNEG&lt;/code&gt;，&lt;code&gt;M&lt;/code&gt;将赋值为4。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id="12-请对比-sample-32s-和-samples-找出它们的区别并上网检索给出产生这些区别的原因如"&gt;1.2 请对比 sample-32.s 和 sample.s ，找出它们的区别，并上网检索给出产生这些区别的原因。如:
+&lt;/h4&gt;&lt;h5 id="pushq-和-pushl"&gt;pushq 和 pushl
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pushl&lt;/code&gt;与&lt;code&gt;pushq&lt;/code&gt;的区别在于操作的位数不同，具体来说&lt;code&gt;pushl&lt;/code&gt;压入一个&lt;strong&gt;双字&lt;/strong&gt;的长度即32位，而&lt;code&gt;pushq&lt;/code&gt;压入一个&lt;strong&gt;四字&lt;/strong&gt;的长度即64位。在32位系统中，&lt;code&gt;ebp&lt;/code&gt;为32位，而在64位系统中，&lt;code&gt;rbp&lt;/code&gt;为64位。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;补充:&lt;/p&gt;</description></item><item><title>Princlples of Compiler Experiments</title><link>https://hluvmiku.tech/blog/princlples-of-compiler-experiments/</link><pubDate>Tue, 24 Oct 2023 14:48:51 +0800</pubDate><guid>https://hluvmiku.tech/blog/princlples-of-compiler-experiments/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310241501131.png" alt="Featured image of post Princlples of Compiler Experiments" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;&lt;p&gt;本文汇总了我的所有编译原理实验报告，仅供参考。&lt;/p&gt;
+&lt;p&gt;如有疑问或实验报告有误，可以留言，我会及时修改。&lt;/p&gt;</description></item><item><title>Stage Summary 2023/10/19</title><link>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</link><pubDate>Thu, 19 Oct 2023 21:09:08 +0800</pubDate><guid>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310192152932.png" alt="Featured image of post Stage Summary 2023/10/19" /&gt;&lt;h2 id="to-bigin-with"&gt;To Bigin With:
+&lt;/h2&gt;&lt;p&gt;先讲讲实验室吧。&lt;br&gt;
+折腾了一个暑假&lt;code&gt;LERF&lt;/code&gt;和&lt;code&gt;Segment Anything&lt;/code&gt;，但是在磨洋工。&lt;br&gt;
+这周认真干了一两天就有突破了。（写文章的时候正在训练实验，显存不太够，故下图没有显示&lt;code&gt;SAM&lt;/code&gt;的结果。）
 &lt;img src="https://cdn.hluvmiku.tech/image/202310192148518.png"
 loading="lazy"
 alt="202310192148518"
->&lt;/p></description></item><item><title>Create Your Custom Email Domain With ICloud Plus</title><link>https://hluvmiku.tech/blog/create-your-custom-email-domain-with-icloud-plus/</link><pubDate>Tue, 10 Oct 2023 19:44:57 +0800</pubDate><guid>https://hluvmiku.tech/blog/create-your-custom-email-domain-with-icloud-plus/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310102031515.png" alt="Featured image of post Create Your Custom Email Domain With ICloud Plus" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>通过本文，你将了解：
+&gt;&lt;/p&gt;</description></item><item><title>Create Your Custom Email Domain With ICloud Plus</title><link>https://hluvmiku.tech/blog/create-your-custom-email-domain-with-icloud-plus/</link><pubDate>Tue, 10 Oct 2023 19:44:57 +0800</pubDate><guid>https://hluvmiku.tech/blog/create-your-custom-email-domain-with-icloud-plus/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310102031515.png" alt="Featured image of post Create Your Custom Email Domain With ICloud Plus" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;通过本文，你将了解：
 - 如何通过iCloud购买自定义域名
-- 如何使用iCloud+创建自定义邮箱域名&lt;/p></description></item><item><title>Use LLM in Your Console</title><link>https://hluvmiku.tech/blog/use-llm-in-your-console/</link><pubDate>Wed, 13 Sep 2023 15:49:15 +0800</pubDate><guid>https://hluvmiku.tech/blog/use-llm-in-your-console/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202309131725183.png" alt="Featured image of post Use LLM in Your Console" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>本文将介绍&lt;code>Open Interpreter&lt;/code> - 一个可以在终端调用&lt;code>GPT-4&lt;/code>或本地的&lt;code>Code-llama&lt;/code>的python库。&lt;/p></description></item><item><title>Hello Gossip</title><link>https://hluvmiku.tech/blog/hello-gossip/</link><pubDate>Tue, 12 Sep 2023 15:56:22 +0800</pubDate><guid>https://hluvmiku.tech/blog/hello-gossip/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121602704.png" alt="Featured image of post Hello Gossip" />&lt;p>杂谈就在这里了。&lt;br>
-我会在这里分享一些我想分享的东西。而不是技术分享。&lt;/p>
-&lt;p>最近感觉脑子快被AI代替了，我还是希望能更多的自己思考一些事情，因此我打算在这里多些自己的思考。&lt;/p></description></item><item><title>Screenshot to Reminders</title><link>https://hluvmiku.tech/blog/screenshot-to-reminders/</link><pubDate>Tue, 12 Sep 2023 14:51:52 +0800</pubDate><guid>https://hluvmiku.tech/blog/screenshot-to-reminders/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121546372.png" alt="Featured image of post Screenshot to Reminders" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>&lt;p>通过本文，你将了解：&lt;/p>
-&lt;ul>
-&lt;li>iOS快捷指令的基本使用&lt;/li>
-&lt;li>如何利用快捷指令中OCR和ChatGPT for iOS将截图文字转换为提醒事项&lt;/li>
-&lt;/ul>
-&lt;p>你将得到视频所示的解决方案：&lt;/p></description></item><item><title>How to Enable Google Search Console API</title><link>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</link><pubDate>Tue, 29 Aug 2023 16:24:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308301902385.png" alt="Featured image of post How to Enable Google Search Console API" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>&lt;p>通过本文，你将了解：&lt;/p>
-&lt;ul>
-&lt;li>如何在Google Cloud Platform创建项目&lt;/li>
-&lt;li>如何验证域名所有权&lt;/li>
-&lt;li>如何启用Google Search API&lt;/li>
-&lt;/ul>&lt;/p></description></item><item><title>Automatic Submit Your Page</title><link>https://hluvmiku.tech/blog/automatic-submit-your-page/</link><pubDate>Tue, 29 Aug 2023 16:16:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/automatic-submit-your-page/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308291727641.png-small.webp" alt="Featured image of post Automatic Submit Your Page" />&lt;div class="notice tip">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
-&lt;/svg>&lt;p>Tip&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>&lt;p>通过本文，你将了解：&lt;/p>
-&lt;ul>
-&lt;li>GitHub Actions的基本使用&lt;/li>
-&lt;li>如何使用GitHub Actions自动推送URL至Google Search Console&lt;/li>
-&lt;li>如何使用GitHub Actions自动推送URL至百度站长平台&lt;/li>
-&lt;/ul>
-&lt;p>你将得到以下方案：&lt;/p></description></item><item><title>Nintendo Switch Joycon Simulator</title><link>https://hluvmiku.tech/blog/nintendo-switch-joycon-simulator/</link><pubDate>Mon, 28 Aug 2023 15:43:40 +0800</pubDate><guid>https://hluvmiku.tech/blog/nintendo-switch-joycon-simulator/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281657027.JPG" alt="Featured image of post Nintendo Switch Joycon Simulator" />&lt;div class="notice note">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-&lt;/svg>&lt;p>Note&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>本教程需要你拥有一张&lt;code>ESP-32&lt;/code>、&lt;code>STM32&lt;/code>或者&lt;code>CH32&lt;/code>开发板。并且本文只基于&lt;code>ESP-32&lt;/code>进行讲解。&lt;/p>&lt;/div>
-&lt;/div>
-&lt;h2 id="1-前言">1 前言
-&lt;/h2>&lt;p>本文只是一个粗浅的教程，详细可以加QQ群&lt;code>946057081&lt;/code>讨论。&lt;br>
-在开始正文前，我想先列举一下我尝试过的方案。&lt;/p></description></item><item><title>Build Your Blog 2</title><link>https://hluvmiku.tech/blog/build-your-blog-2/</link><pubDate>Mon, 28 Aug 2023 14:35:20 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-your-blog-2/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281503218.png" alt="Featured image of post Build Your Blog 2" />&lt;div class="notice note">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-&lt;/svg>&lt;p>Note&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>&lt;p>本文章是 &lt;a class="link" href="https://hluvmiku.tech/blog/build-your-blog-1/" >使用hugo+GitHub Pages搭建免费博客&lt;/a> 的续篇。&lt;br>
-下文假设你已经：&lt;/p>
-&lt;ol>
-&lt;li>拥有自己的GitHub Pages仓库&lt;/li>
-&lt;li>安装了hugo并完成有关配置&lt;/li>
-&lt;/ol>&lt;/p></description></item><item><title>Build Your Blog 1</title><link>https://hluvmiku.tech/blog/build-your-blog-1/</link><pubDate>Mon, 28 Aug 2023 11:43:57 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-your-blog-1/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281329993.png" alt="Featured image of post Build Your Blog 1" />&lt;h2 id="1-前言">1 前言
-&lt;/h2>
-&lt;div class="notice note">
-&lt;div class="notice-head">&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
-&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-&lt;/svg>&lt;p>Note&lt;/p>
-&lt;/div>
-&lt;div class="notice-body">&lt;p>注意：我并不推荐这套方案，比起这套方案，hexo + GitHub Pages有着更加完善的生态。&lt;/p>&lt;/div>
-&lt;/div>
-&lt;p>如果说是使用托管服务搭建博客的话，其实我并不是很建议 &lt;code>hugo&lt;/code> 。&lt;br>
-&lt;code>hugo&lt;/code> 相较于 &lt;code>hexo&lt;/code> 来说，配置起来比较麻烦，而且 &lt;code>hugo&lt;/code> 的主题插件也比较少。&lt;br>
-它的优势在哪呢？它的唯一优势是生成速度快。但是既然都使用托管服务了，那么生成速度就不在我们的考量中。&lt;/p></description></item><item><title>Re:你好，世界</title><link>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</link><pubDate>Sat, 26 Aug 2023 11:27:00 +0000</pubDate><guid>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308272034636.png" alt="Featured image of post Re:你好，世界" />&lt;h2 id="原来的博客发生了什么">原来的博客发生了什么？
-&lt;/h2>&lt;p>长话短说，我不小心把之前博客的数据库删了。&lt;br>
-就单纯是一不小心删除了了数据库文件。&lt;/p>
-&lt;h2 id="这是什么">这是什么？
-&lt;/h2>&lt;p>这是我用 &lt;code>Hugo&lt;/code> 搭建的博客，并使用 &lt;code>Github Actions&lt;/code> 自动部署。&lt;/p>
-&lt;p>所有图片通过 &lt;code>七牛云&lt;/code> 储存，本地上传采用了 &lt;code>PicGO&lt;/code>。&lt;br>
-全博客本着&lt;code>能用现成的就不造轮子&lt;/code>的宗旨。&lt;/p></description></item></channel></rss>
+- 如何使用iCloud+创建自定义邮箱域名&lt;/p&gt;</description></item><item><title>Use LLM in Your Console</title><link>https://hluvmiku.tech/blog/use-llm-in-your-console/</link><pubDate>Wed, 13 Sep 2023 15:49:15 +0800</pubDate><guid>https://hluvmiku.tech/blog/use-llm-in-your-console/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202309131725183.png" alt="Featured image of post Use LLM in Your Console" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;本文将介绍&lt;code&gt;Open Interpreter&lt;/code&gt; - 一个可以在终端调用&lt;code&gt;GPT-4&lt;/code&gt;或本地的&lt;code&gt;Code-llama&lt;/code&gt;的python库。&lt;/p&gt;</description></item><item><title>Hello Gossip</title><link>https://hluvmiku.tech/blog/hello-gossip/</link><pubDate>Tue, 12 Sep 2023 15:56:22 +0800</pubDate><guid>https://hluvmiku.tech/blog/hello-gossip/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121602704.png" alt="Featured image of post Hello Gossip" /&gt;&lt;p&gt;杂谈就在这里了。&lt;br&gt;
+我会在这里分享一些我想分享的东西。而不是技术分享。&lt;/p&gt;
+&lt;p&gt;最近感觉脑子快被AI代替了，我还是希望能更多的自己思考一些事情，因此我打算在这里多些自己的思考。&lt;/p&gt;</description></item><item><title>Screenshot to Reminders</title><link>https://hluvmiku.tech/blog/screenshot-to-reminders/</link><pubDate>Tue, 12 Sep 2023 14:51:52 +0800</pubDate><guid>https://hluvmiku.tech/blog/screenshot-to-reminders/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202309121546372.png" alt="Featured image of post Screenshot to Reminders" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;&lt;p&gt;通过本文，你将了解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS快捷指令的基本使用&lt;/li&gt;
+&lt;li&gt;如何利用快捷指令中OCR和ChatGPT for iOS将截图文字转换为提醒事项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你将得到视频所示的解决方案：&lt;/p&gt;</description></item><item><title>How to Enable Google Search Console API</title><link>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</link><pubDate>Tue, 29 Aug 2023 16:24:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/how-to-enable-google-search-console-api/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308301902385.png" alt="Featured image of post How to Enable Google Search Console API" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;&lt;p&gt;通过本文，你将了解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何在Google Cloud Platform创建项目&lt;/li&gt;
+&lt;li&gt;如何验证域名所有权&lt;/li&gt;
+&lt;li&gt;如何启用Google Search API&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description></item><item><title>Automatic Submit Your Page</title><link>https://hluvmiku.tech/blog/automatic-submit-your-page/</link><pubDate>Tue, 29 Aug 2023 16:16:49 +0800</pubDate><guid>https://hluvmiku.tech/blog/automatic-submit-your-page/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308291727641.png-small.webp" alt="Featured image of post Automatic Submit Your Page" /&gt;&lt;div class="notice tip"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" /&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" /&gt;
+&lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;&lt;p&gt;通过本文，你将了解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub Actions的基本使用&lt;/li&gt;
+&lt;li&gt;如何使用GitHub Actions自动推送URL至Google Search Console&lt;/li&gt;
+&lt;li&gt;如何使用GitHub Actions自动推送URL至百度站长平台&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你将得到以下方案：&lt;/p&gt;</description></item><item><title>Nintendo Switch Joycon Simulator</title><link>https://hluvmiku.tech/blog/nintendo-switch-joycon-simulator/</link><pubDate>Mon, 28 Aug 2023 15:43:40 +0800</pubDate><guid>https://hluvmiku.tech/blog/nintendo-switch-joycon-simulator/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281657027.JPG" alt="Featured image of post Nintendo Switch Joycon Simulator" /&gt;&lt;div class="notice note"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" /&gt;
+&lt;/svg&gt;&lt;p&gt;Note&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;本教程需要你拥有一张&lt;code&gt;ESP-32&lt;/code&gt;、&lt;code&gt;STM32&lt;/code&gt;或者&lt;code&gt;CH32&lt;/code&gt;开发板。并且本文只基于&lt;code&gt;ESP-32&lt;/code&gt;进行讲解。&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="1-前言"&gt;1 前言
+&lt;/h2&gt;&lt;p&gt;本文只是一个粗浅的教程，详细可以加QQ群&lt;code&gt;946057081&lt;/code&gt;讨论。&lt;br&gt;
+在开始正文前，我想先列举一下我尝试过的方案。&lt;/p&gt;</description></item><item><title>Build Your Blog 2</title><link>https://hluvmiku.tech/blog/build-your-blog-2/</link><pubDate>Mon, 28 Aug 2023 14:35:20 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-your-blog-2/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281503218.png" alt="Featured image of post Build Your Blog 2" /&gt;&lt;div class="notice note"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" /&gt;
+&lt;/svg&gt;&lt;p&gt;Note&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;&lt;p&gt;本文章是 &lt;a class="link" href="https://hluvmiku.tech/blog/build-your-blog-1/" &gt;使用hugo+GitHub Pages搭建免费博客&lt;/a&gt; 的续篇。&lt;br&gt;
+下文假设你已经：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;拥有自己的GitHub Pages仓库&lt;/li&gt;
+&lt;li&gt;安装了hugo并完成有关配置&lt;/li&gt;
+&lt;/ol&gt;&lt;/p&gt;</description></item><item><title>Build Your Blog 1</title><link>https://hluvmiku.tech/blog/build-your-blog-1/</link><pubDate>Mon, 28 Aug 2023 11:43:57 +0800</pubDate><guid>https://hluvmiku.tech/blog/build-your-blog-1/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308281329993.png" alt="Featured image of post Build Your Blog 1" /&gt;&lt;h2 id="1-前言"&gt;1 前言
+&lt;/h2&gt;
+&lt;div class="notice note"&gt;
+&lt;div class="notice-head"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor"&gt;
+&lt;path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" /&gt;
+&lt;/svg&gt;&lt;p&gt;Note&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice-body"&gt;&lt;p&gt;注意：我并不推荐这套方案，比起这套方案，hexo + GitHub Pages有着更加完善的生态。&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;如果说是使用托管服务搭建博客的话，其实我并不是很建议 &lt;code&gt;hugo&lt;/code&gt; 。&lt;br&gt;
+&lt;code&gt;hugo&lt;/code&gt; 相较于 &lt;code&gt;hexo&lt;/code&gt; 来说，配置起来比较麻烦，而且 &lt;code&gt;hugo&lt;/code&gt; 的主题插件也比较少。&lt;br&gt;
+它的优势在哪呢？它的唯一优势是生成速度快。但是既然都使用托管服务了，那么生成速度就不在我们的考量中。&lt;/p&gt;</description></item><item><title>Re:你好，世界</title><link>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</link><pubDate>Sat, 26 Aug 2023 11:27:00 +0000</pubDate><guid>https://hluvmiku.tech/blog/re%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/blog/202308272034636.png" alt="Featured image of post Re:你好，世界" /&gt;&lt;h2 id="原来的博客发生了什么"&gt;原来的博客发生了什么？
+&lt;/h2&gt;&lt;p&gt;长话短说，我不小心把之前博客的数据库删了。&lt;br&gt;
+就单纯是一不小心删除了了数据库文件。&lt;/p&gt;
+&lt;h2 id="这是什么"&gt;这是什么？
+&lt;/h2&gt;&lt;p&gt;这是我用 &lt;code&gt;Hugo&lt;/code&gt; 搭建的博客，并使用 &lt;code&gt;Github Actions&lt;/code&gt; 自动部署。&lt;/p&gt;
+&lt;p&gt;所有图片通过 &lt;code&gt;七牛云&lt;/code&gt; 储存，本地上传采用了 &lt;code&gt;PicGO&lt;/code&gt;。&lt;br&gt;
+全博客本着&lt;code&gt;能用现成的就不造轮子&lt;/code&gt;的宗旨。&lt;/p&gt;</description></item></channel></rss>
