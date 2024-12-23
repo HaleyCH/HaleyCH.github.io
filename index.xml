@@ -70,7 +70,29 @@ alt="202405191618670"
 &lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="notice-body"&gt;&lt;p&gt;不定期更新
-上次更新时间：2024-04-18&lt;/p&gt;</description></item><item><title>Year End Summary 2023/12/30</title><link>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</link><pubDate>Sat, 30 Dec 2023 23:18:43 +0800</pubDate><guid>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202402271541817.png" alt="Featured image of post Year End Summary 2023/12/30" /&gt;&lt;p&gt;老实说按年来总结挺难的，挺多事情挺没条理的。&lt;/p&gt;
+上次更新时间：2024-04-18&lt;/p&gt;</description></item><item><title>Year End Summary 2023/12/30</title><link>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</link><pubDate>Sat, 30 Dec 2023 23:18:43 +0800</pubDate><guid>https://hluvmiku.tech/blog/year-end-summary-2023/12/30/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/image202402271541817.png" alt="Featured image of post Year End Summary 2023/12/30" /&gt;&lt;div class="hugo-encryptor-container"&gt;
+&lt;div class="hugo-encryptor-prompt"&gt;
+&lt;p&gt;文章的部分内容被密码保护，提示 “我的名字全拼小写”：&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="hugo-encryptor-form"&gt;
+&lt;input
+class="hugo-encryptor-input"
+placeholder='请输入密码'
+/&gt;
+&lt;input
+class="hugo-encryptor-button"
+type="button"
+value='点击验证'
+onclick="_click_handler(this)"
+/&gt;
+&lt;/div&gt;
+&lt;div
+class="hugo-encryptor-cipher-text"
+data-password="chenzirui"
+style="display: none;"
+&gt;
+&lt;span style="display: none;"&gt;--- DON'T MODIFY THIS LINE ---&lt;/span&gt;
+&lt;p&gt;老实说按年来总结挺难的，挺多事情挺没条理的。&lt;/p&gt;
 &lt;details&gt; &lt;summary&gt;图文回顾&lt;/summary&gt;
 &lt;p&gt;2月：&lt;/p&gt;
 &lt;ul&gt;
@@ -128,7 +150,29 @@ alt="202312310023326"
 &lt;/svg&gt;&lt;p&gt;Tip&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="notice-body"&gt;&lt;p&gt;&lt;p&gt;本文汇总了我的所有编译原理实验报告，仅供参考。&lt;/p&gt;
-&lt;p&gt;如有疑问或实验报告有误，可以留言，我会及时修改。&lt;/p&gt;</description></item><item><title>Stage Summary 2023/10/19</title><link>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</link><pubDate>Thu, 19 Oct 2023 21:09:08 +0800</pubDate><guid>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310192152932.png" alt="Featured image of post Stage Summary 2023/10/19" /&gt;&lt;h2 id="to-bigin-with"&gt;To Bigin With:
+&lt;p&gt;如有疑问或实验报告有误，可以留言，我会及时修改。&lt;/p&gt;</description></item><item><title>Stage Summary 2023/10/19</title><link>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</link><pubDate>Thu, 19 Oct 2023 21:09:08 +0800</pubDate><guid>https://hluvmiku.tech/blog/stage-summary-2023/10/19/</guid><description>&lt;img src="https://cdn.hluvmiku.tech/image/202310192152932.png" alt="Featured image of post Stage Summary 2023/10/19" /&gt;&lt;div class="hugo-encryptor-container"&gt;
+&lt;div class="hugo-encryptor-prompt"&gt;
+&lt;p&gt;文章的部分内容被密码保护，提示 “我的名字全拼小写”：&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="hugo-encryptor-form"&gt;
+&lt;input
+class="hugo-encryptor-input"
+placeholder='请输入密码'
+/&gt;
+&lt;input
+class="hugo-encryptor-button"
+type="button"
+value='点击验证'
+onclick="_click_handler(this)"
+/&gt;
+&lt;/div&gt;
+&lt;div
+class="hugo-encryptor-cipher-text"
+data-password="chenzirui"
+style="display: none;"
+&gt;
+&lt;span style="display: none;"&gt;--- DON'T MODIFY THIS LINE ---&lt;/span&gt;
+&lt;h2 id="to-bigin-with"&gt;To Bigin With:
 &lt;/h2&gt;&lt;p&gt;先讲讲实验室吧。&lt;br&gt;
 折腾了一个暑假&lt;code&gt;LERF&lt;/code&gt;和&lt;code&gt;Segment Anything&lt;/code&gt;，但是在磨洋工。&lt;br&gt;
 这周认真干了一两天就有突破了。（写文章的时候正在训练实验，显存不太够，故下图没有显示&lt;code&gt;SAM&lt;/code&gt;的结果。）
